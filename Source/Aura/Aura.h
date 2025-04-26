@@ -4,3 +4,4 @@
 
 #include "CoreMinimal.h"
 
+inline constexpr int32 HighlightDepthStencilValue = 250;
