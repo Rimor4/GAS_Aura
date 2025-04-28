@@ -12,14 +12,18 @@
  * 
  */
 UCLASS()
-class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface, public IAbilitySystemInterface
+class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface
 {
 	GENERATED_BODY()
 	
 public:
 	AAuraEnemy();
+
+#pragma region Enemy Interface
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+#pragma endregion
+	
+protected:
+	virtual void BeginPlay() override;
 };

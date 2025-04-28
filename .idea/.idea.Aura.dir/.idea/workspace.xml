@@ -8,8 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacterBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraEnemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraCharacterBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraEnemy.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +45,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://2" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/CommonUI/Source/CommonUI/CommonUI.Build.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/GameFeatures/Source/GameFeatures/GameFeatures.Build.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/AbilitySystemComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/AbilitySystemDebugHUD.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/ApplicationCore/Public/GenericPlatform/ICursor.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CUDA/Source/Private/CudaModule.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/CoreMinimal.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateCombinations.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/GenericPlatform/GenericPlatform.h" root0="FORCE_HIGHLIGHTING" />
@@ -58,6 +65,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectHandle.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectPtr.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/Engine/HitResult.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
@@ -66,13 +74,34 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/Controller.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/PlayerController.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/PlayerState.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Public/DrawDebugHelpers.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Aura.uproject" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Aura.Build.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Aura.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AuraAbilitySystemComponent.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AuraAbilitySystemComponent.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Character/AuraCharacter.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Character/AuraCharacterBase.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Character/AuraEnemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Character/AuraEnemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Game/AuraGameModeBase.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Interaction/EnemyInterface.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Player/AuraPlayerState.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/AbilitySystem/AuraAbilitySystemComponent.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Character/AuraCharacter.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Character/AuraCharacterBase.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Character/AuraEnemy.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Game/AuraGameModeBase.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Interaction/EnemyInterface.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Player/AuraPlayerController.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Player/AuraPlayerState.h" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -98,7 +127,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.nasller.CodeGlancePro",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -200,7 +229,9 @@
       <workItem from="1745594879042" duration="316000" />
       <workItem from="1745595234293" duration="2326000" />
       <workItem from="1745647935951" duration="10305000" />
-      <workItem from="1745664067260" duration="15564000" />
+      <workItem from="1745664067260" duration="16084000" />
+      <workItem from="1745767246295" duration="405000" />
+      <workItem from="1745767683697" duration="4099000" />
     </task>
     <task id="LOCAL-00001" summary="The Base Character Class">
       <option name="closed" value="true" />
@@ -338,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745764668392</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Replication Mode">
+      <option name="closed" value="true" />
+      <created>1745766503193</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745766503193</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +413,8 @@
     <MESSAGE value="Ability System Component and Attribute Set" />
     <MESSAGE value="Constructing the Ability System Component and the Attribute Set" />
     <MESSAGE value="Constructing the Ability System Component and the Attribute Set #" />
-    <option name="LAST_COMMIT_MESSAGE" value="Constructing the Ability System Component and the Attribute Set #" />
+    <MESSAGE value="Replication Mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replication Mode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -393,5 +433,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
