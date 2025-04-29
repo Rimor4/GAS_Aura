@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aura.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.uproject" afterDir="false" />
-    </list>
+    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,6 +105,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Public/Net/UnrealNetwork.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Public/StaticMeshCompiler.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Aura.uproject" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Aura.uproject" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.generated.h" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -318,7 +316,7 @@
       <workItem from="1745664067260" duration="16084000" />
       <workItem from="1745767246295" duration="405000" />
       <workItem from="1745767683697" duration="4099000" />
-      <workItem from="1745928749134" duration="1763000" />
+      <workItem from="1745928749134" duration="4536000" />
     </task>
     <task id="LOCAL-00001" summary="The Base Character Class">
       <option name="closed" value="true" />
@@ -488,7 +486,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745928788765</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Aura User Widget and Widget Controller">
+      <option name="closed" value="true" />
+      <created>1745930568273</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1745930568273</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Globe Progress Bar">
+      <option name="closed" value="true" />
+      <created>1745938225449</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1745938225449</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +542,9 @@
     <MESSAGE value="Health and Mana" />
     <MESSAGE value="Attribute Accessors" />
     <MESSAGE value="Effect Actor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Effect Actor" />
+    <MESSAGE value="Aura User Widget and Widget Controller" />
+    <MESSAGE value="Globe Progress Bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Globe Progress Bar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
