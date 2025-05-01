@@ -48,10 +48,7 @@ void AAuraCharacter::InitAbilityActorInfo()
 	// 每个 Client 只持有自己的 Controller, 其他 Character 的 Controller 在这里为空
 	if (AAuraPlayerController* AuraPlayerController = Cast<AAuraPlayerController>(GetController()))
 	{
-		if (AAuraHUD* AuraHUD = Cast<AAuraHUD>(AuraPlayerController->GetHUD()))
-		{
-			AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState, AbilitySystemComponent, AttributeSet);
-		}
+		AuraPlayerController->InitHUD(AuraPlayerController, AuraPlayerState, AbilitySystemComponent, AttributeSet);
 	}
 }
 

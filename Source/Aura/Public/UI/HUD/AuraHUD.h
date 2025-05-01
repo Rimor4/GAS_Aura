@@ -28,7 +28,7 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<UAuraUserWidget> OverlayWidgetClass;
+	TSoftClassPtr<UAuraUserWidget> OverlayWidgetClass;
 	
 	UPROPERTY()
 	TObjectPtr<UOverlayWidgetController> OverlayWidgetController;

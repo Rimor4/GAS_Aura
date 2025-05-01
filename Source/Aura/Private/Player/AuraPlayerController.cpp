@@ -5,8 +5,11 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Interaction/EnemyInterface.h"
+#include "UI/HUD/AuraHUD.h"
 
 #pragma region Life Cycle
+
+class AAuraHUD;
 
 AAuraPlayerController::AAuraPlayerController()
 {
@@ -48,6 +51,8 @@ void AAuraPlayerController::PlayerTick(float DeltaTime)
 
 #pragma endregion
 
+
+#pragma region Input
 
 void AAuraPlayerController::SetupInputComponent()
 {
@@ -95,3 +100,19 @@ void AAuraPlayerController::CursorTrace()
 		if (ThisActor) ThisActor->HighlightActor();
 	}
 }
+
+#pragma endregion
+
+
+#pragma region HUD
+
+void AAuraPlayerController::InitHUD(APlayerController* AuraPlayerController, APlayerState* AuraPlayerState,
+	UAbilitySystemComponent* ASC, UAttributeSet* AS) const
+{
+	if (AAuraHUD* AuraHUD = Cast<AAuraHUD>(GetHUD()))
+	{
+		AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState, ASC, AS);
+	}
+}
+
+#pragma endregion
