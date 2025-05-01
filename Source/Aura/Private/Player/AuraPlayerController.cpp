@@ -21,6 +21,11 @@ void AAuraPlayerController::BeginPlay()
 	// 通过EnhancedInputLocalPlayerSubsystem应用映射上下文
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(
 		GetLocalPlayer());
+	// TODO: 有必要改成下面的吗（为了防止在多人游戏中拿到别人的Player）
+	// if (Subsystem)
+	// {
+	// 	Subsystem->AddMappingContext(AuraContext, 0);
+	// }
 	check(Subsystem);
 	Subsystem->AddMappingContext(AuraContext, 0);
 
