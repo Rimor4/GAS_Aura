@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actor/Potion/BP_HealthPotion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actor/Potion/BP_HealthPotion.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Actor/AuraEffectActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Actor/AuraEffectActor.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,6 +215,7 @@
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/HUD/AuraHUD.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/Widget/AuraUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Actor/AuraEffectActor.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/HUD/AuraHUD.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/Widget/AuraUserWidget.h" root0="FORCE_HIGHLIGHTING" />
@@ -433,7 +433,7 @@
       <workItem from="1746062518661" duration="53000" />
       <workItem from="1746062715019" duration="183000" />
       <workItem from="1746062919550" duration="38664000" />
-      <workItem from="1746161725558" duration="10650000" />
+      <workItem from="1746161725558" duration="17267000" />
     </task>
     <task id="LOCAL-00001" summary="The Base Character Class">
       <option name="closed" value="true" />
@@ -691,7 +691,39 @@
       <option name="project" value="LOCAL" />
       <updated>1746189876780</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Duration Gameplay Effects">
+      <option name="closed" value="true" />
+      <created>1746191624196</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1746191624196</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Periodic Gameplay Effects">
+      <option name="closed" value="true" />
+      <created>1746238258626</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1746238258626</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Periodic Gameplay Effects">
+      <option name="closed" value="true" />
+      <created>1746238264543</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1746238264543</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Effect Stacking">
+      <option name="closed" value="true" />
+      <created>1746239162774</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1746239162774</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,9 +744,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Enhanced Input" />
-    <MESSAGE value="Aura Player Controller" />
-    <MESSAGE value="Movement Input *" />
     <MESSAGE value="Game Mode" />
     <MESSAGE value="Enemy Interface" />
     <MESSAGE value="Highlight Enemies" />
@@ -737,7 +766,10 @@
     <MESSAGE value="Callbacks for Mana Changes" />
     <MESSAGE value="Effect Actor Improved" />
     <MESSAGE value="Instant Gameplay Effects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Instant Gameplay Effects" />
+    <MESSAGE value="Duration Gameplay Effects" />
+    <MESSAGE value="Periodic Gameplay Effects" />
+    <MESSAGE value="Effect Stacking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Effect Stacking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
