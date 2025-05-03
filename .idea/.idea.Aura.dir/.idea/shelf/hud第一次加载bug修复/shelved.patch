@@ -1,0 +1,19 @@
+Index: Source/Aura/Private/UI/HUD/AuraHUD.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n\r\n#include \"UI/HUD/AuraHUD.h\"\r\n\r\n#include \"Engine/AssetManager.h\"\r\n#include \"UI/Widget/AuraUserWidget.h\"\r\n#include \"UI/WidgetController/OverlayWidgetController.h\"\r\n\r\nvoid AAuraHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)\r\n{\r\n\tcheckf(OverlayWidgetClass, TEXT(\"Overlay Widget Class uninitialized, please fill out BP_AuraHUD\"));\r\n\tcheckf(OverlayWidgetControllerClass,\r\n\t       TEXT(\"Overlay Widget Controller Class uninitialized, please fill out BP_AuraHUD\"));\r\n\tconst FWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);\r\n\tUOverlayWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);\r\n\r\n\t// TODO: 统一管理异步加载和延迟显示\r\n\tFStreamableManager& Streamable = UAssetManager::GetStreamableManager();\r\n\tStreamable.RequestAsyncLoad(OverlayWidgetClass.ToSoftObjectPath(), [this, WidgetController]()\r\n\t{\r\n\t\tif (UClass* LoadedClass = OverlayWidgetClass.Get())\r\n\t\t{\r\n\t\t\tOverlayWidget = CreateWidget<UAuraUserWidget>(GetWorld(), LoadedClass);\r\n\t\t\tif (OverlayWidget)\r\n\t\t\t{\r\n\t\t\t\tOverlayWidget->SetWidgetController(WidgetController);\r\n\t\t\t\tWidgetController->BroadcastInitialValues();\r\n\t\t\t\t\r\n\t\t\t\tGetWorld()->GetTimerManager().SetTimerForNextTick([this]()\r\n\t\t\t\t{\r\n\t\t\t\t\tOverlayWidget->AddToViewport();\r\n\t\t\t\t});\r\n\t\t\t}\r\n\t\t}\r\n\t});\r\n}\r\n\r\nUOverlayWidgetController* AAuraHUD::GetOverlayWidgetController(const FWidgetControllerParams& WCParams)\r\n{\r\n\tif (OverlayWidgetController == nullptr)\r\n\t{\r\n\t\tOverlayWidgetController = NewObject<UOverlayWidgetController>(this, OverlayWidgetControllerClass);\r\n\t\tOverlayWidgetController->SetWidgetControllerParams(WCParams);\r\n\t\tOverlayWidgetController->BindCallbackToDependencies();\r\n\t}\r\n\treturn OverlayWidgetController;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Private/UI/HUD/AuraHUD.cpp b/Source/Aura/Private/UI/HUD/AuraHUD.cpp
+--- a/Source/Aura/Private/UI/HUD/AuraHUD.cpp	(revision 90667a24c0e48f7711b0ca049f06f954554813b8)
++++ b/Source/Aura/Private/UI/HUD/AuraHUD.cpp	(date 1746247157619)
+@@ -9,7 +9,7 @@
+ 
+ void AAuraHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)
+ {
+-	checkf(OverlayWidgetClass, TEXT("Overlay Widget Class uninitialized, please fill out BP_AuraHUD"));
++	checkf(!OverlayWidgetClass.IsNull(), TEXT("Overlay Widget Class unassigned, please fill out BP_AuraHUD"));
+ 	checkf(OverlayWidgetControllerClass,
+ 	       TEXT("Overlay Widget Controller Class uninitialized, please fill out BP_AuraHUD"));
+ 	const FWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);
