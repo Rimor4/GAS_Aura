@@ -2,7 +2,6 @@
 
 
 #include "UI/HUD/AuraHUD.h"
-
 #include "Engine/AssetManager.h"
 #include "UI/Widget/AuraUserWidget.h"
 #include "UI/WidgetController/OverlayWidgetController.h"
@@ -12,6 +11,7 @@ void AAuraHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySyst
 	checkf(!OverlayWidgetClass.IsNull(), TEXT("Overlay Widget Class unassigned, please fill out BP_AuraHUD"));
 	checkf(OverlayWidgetControllerClass,
 	       TEXT("Overlay Widget Controller Class uninitialized, please fill out BP_AuraHUD"));
+	
 	const FWidgetControllerParams WidgetControllerParams(PC, PS, ASC, AS);
 	UOverlayWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);
 

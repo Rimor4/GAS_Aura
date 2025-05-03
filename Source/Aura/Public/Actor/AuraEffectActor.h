@@ -32,6 +32,7 @@ class AURA_API AAuraEffectActor : public AActor
 
 public:
 	AAuraEffectActor();
+	
 	virtual ~AAuraEffectActor() override;
 
 protected:

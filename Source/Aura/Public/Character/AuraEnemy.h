@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Character/AuraCharacterBase.h"
-#include "AbilitySystemInterface.h"
 #include "Interaction/EnemyInterface.h"
 #include "AuraEnemy.generated.h"
 
@@ -20,8 +19,11 @@ public:
 	AAuraEnemy();
 
 #pragma region Enemy Interface
+	
 	virtual void HighlightActor() override;
+	
 	virtual void UnHighlightActor() override;
+	
 #pragma endregion
 	
 protected:

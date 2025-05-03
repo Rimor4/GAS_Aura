@@ -23,6 +23,7 @@ class AURA_API AAuraPlayerController : public APlayerController
 
 public:
 	AAuraPlayerController();
+	
 	virtual void PlayerTick(float DeltaTime) override;
 
 	void InitHUD(APlayerController* AuraPlayerController, APlayerState* AuraPlayerState,
@@ -30,6 +31,7 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	
 	virtual void SetupInputComponent() override;
 
 private:
@@ -42,6 +44,8 @@ private:
 	void Move(const struct FInputActionValue& InputActionValue);
 
 	void CursorTrace();
+	
 	TObjectPtr<IEnemyInterface> LastActor;
+	
 	TObjectPtr<IEnemyInterface> ThisActor;
 };
