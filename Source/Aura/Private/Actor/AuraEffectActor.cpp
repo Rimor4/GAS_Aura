@@ -49,7 +49,7 @@ void AAuraEffectActor::ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UGam
 
 	// 生成 GE Spec（GE的参数总和）
 	const FGameplayEffectSpecHandle EffectSpecHandle = TargetASC->MakeOutgoingSpec(
-		GameplayEffectClass, 1.f, EffectContextHandle);
+		GameplayEffectClass, ActorLevel, EffectContextHandle);
 	const FActiveGameplayEffectHandle ActiveEffectHandle = TargetASC->ApplyGameplayEffectSpecToSelf(
 		*EffectSpecHandle.Data.Get());
 

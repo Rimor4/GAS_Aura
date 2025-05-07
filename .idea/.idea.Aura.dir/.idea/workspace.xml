@@ -8,7 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actor/Potion/GE_PotionHeal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actor/Potion/GE_PotionHeal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Actor/AuraEffectActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Actor/AuraEffectActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Actor/AuraEffectActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Actor/AuraEffectActor.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,18 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -278,6 +292,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Misc/MTAccessDetector.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Misc/Optional.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/ProfilingDebugging/AssetMetadataTrace.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Stats/Stats2.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/Atomic.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/Invoke.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/MemoryOps.h" root0="FORCE_HIGHLIGHTING" />
@@ -345,6 +360,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/ActorReplication.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Components/ActorComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Components/PrimitiveComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Private/DataChannel.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -391,6 +407,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/SlateCore/Public/Widgets/DeclarativeSyntaxSupport.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/SlateCore/Public/Widgets/SOverlay.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/SlateCore/Public/Widgets/SWidget.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/SlateRHIRenderer/Private/SlatePostProcessResource.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/SlateRHIRenderer/Private/SlateRHIRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/SoundFieldRendering/Private/SphericalHarmonicCalculator.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/UMG/Private/Blueprint/GameViewportSubsystem.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -441,7 +458,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CppUnrealEngineOptionsId",
+    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -633,7 +650,7 @@
       <workItem from="1746062919550" duration="38664000" />
       <workItem from="1746161725558" duration="37061000" />
       <workItem from="1746270664687" duration="22000" />
-      <workItem from="1746270738334" duration="10766000" />
+      <workItem from="1746270738334" duration="20562000" />
     </task>
     <task id="LOCAL-00001" summary="The Base Character Class">
       <option name="closed" value="true" />
@@ -971,7 +988,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746269769953</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="PostGameplayEffectExecute">
+      <option name="closed" value="true" />
+      <created>1746627675129</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1746627675129</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -992,7 +1017,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Constructing the Ability System Component and the Attribute Set #" />
     <MESSAGE value="Replication Mode" />
     <MESSAGE value="Health and Mana" />
     <MESSAGE value="Attribute Accessors" />
@@ -1017,7 +1041,8 @@
     <MESSAGE value="fix HUD初始化时OverlayWidgetClass检出异常" />
     <MESSAGE value="Clean Code" />
     <MESSAGE value="PreAttributeChange" />
-    <option name="LAST_COMMIT_MESSAGE" value="PreAttributeChange" />
+    <MESSAGE value="PostGameplayEffectExecute" />
+    <option name="LAST_COMMIT_MESSAGE" value="PostGameplayEffectExecute" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1038,21 +1063,6 @@
           <url>file://$PROJECT_DIR$/Source/Aura/Private/Actor/AuraEffectActor.cpp</url>
           <line>52</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp</url>
-          <line>48</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Engine/Public/Net/UnrealNetwork.h</url>
-          <line>289</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp</url>
-          <line>18</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
