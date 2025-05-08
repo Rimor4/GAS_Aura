@@ -26,8 +26,11 @@ public:
 	
 	virtual void PlayerTick(float DeltaTime) override;
 
-	void InitHUD(APlayerController* AuraPlayerController, APlayerState* AuraPlayerState,
-	             UAbilitySystemComponent* ASC, UAttributeSet* AS) const;
+	virtual void OnPossess(APawn* InPawn) override;
+
+	virtual void OnRep_PlayerState() override;
+
+	void InitHUD(APlayerState* AuraPlayerState, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 
 protected:
 	virtual void BeginPlay() override;

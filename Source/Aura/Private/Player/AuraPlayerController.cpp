@@ -5,6 +5,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Interaction/EnemyInterface.h"
+#include "Player/AuraPlayerState.h"
 #include "UI/HUD/AuraHUD.h"
 
 #pragma region Life Cycle
@@ -44,6 +45,27 @@ void AAuraPlayerController::PlayerTick(const float DeltaTime)
 	Super::PlayerTick(DeltaTime);
 
 	CursorTrace();
+}
+
+void AAuraPlayerController::OnPossess(APawn* InPawn)
+{
+	Super::OnPossess(InPawn);
+
+	if (AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>())
+	{
+		InitHUD(AuraPlayerState, AuraPlayerState->GetAbilitySystemComponent(), AuraPlayerState->GetAttributeSet());
+	}
+}
+
+void AAuraPlayerController::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	if (AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>())
+	{
+		// TODO: 客户端会初始化两次InitHUD
+		InitHUD(AuraPlayerState, AuraPlayerState->GetAbilitySystemComponent(), AuraPlayerState->GetAttributeSet());
+	}
 }
 
 #pragma endregion
@@ -101,12 +123,11 @@ void AAuraPlayerController::CursorTrace()
 
 #pragma region HUD
 
-void AAuraPlayerController::InitHUD(APlayerController* AuraPlayerController, APlayerState* AuraPlayerState,
-	UAbilitySystemComponent* ASC, UAttributeSet* AS) const
+void AAuraPlayerController::InitHUD(APlayerState* AuraPlayerState, UAbilitySystemComponent* ASC, UAttributeSet* AS)
 {
 	if (AAuraHUD* AuraHUD = Cast<AAuraHUD>(GetHUD()))
 	{
-		AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState, ASC, AS);
+		AuraHUD->InitOverlay(this, AuraPlayerState, ASC, AS);
 	}
 }
 
