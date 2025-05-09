@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemComponent.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -479,7 +476,7 @@
       <workItem from="1746161725558" duration="37061000" />
       <workItem from="1746270664687" duration="22000" />
       <workItem from="1746270738334" duration="26667000" />
-      <workItem from="1746715141714" duration="4292000" />
+      <workItem from="1746715141714" duration="4638000" />
     </task>
     <task id="LOCAL-00001" summary="The Base Character Class">
       <option name="closed" value="true" />
@@ -857,7 +854,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746718811654</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Get All Asset Tags">
+      <option name="closed" value="true" />
+      <created>1746719826823</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1746719826823</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -878,7 +883,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Aura User Widget and Widget Controller" />
     <MESSAGE value="Globe Progress Bar" />
     <MESSAGE value="Aura HUD" />
     <MESSAGE value="Overlap Widget Controller" />
@@ -903,7 +907,8 @@
     <MESSAGE value="Creating Gameplay Tags in the Editor" />
     <MESSAGE value="Creating Gameplay Tags with Data Tables" />
     <MESSAGE value="Gameplay Effect Delegates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gameplay Effect Delegates" />
+    <MESSAGE value="Get All Asset Tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get All Asset Tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
