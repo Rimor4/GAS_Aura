@@ -63,7 +63,6 @@ void AAuraPlayerController::OnRep_PlayerState()
 
 	if (AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>())
 	{
-		// TODO: 客户端会初始化两次InitHUD
 		InitHUD(AuraPlayerState, AuraPlayerState->GetAbilitySystemComponent(), AuraPlayerState->GetAttributeSet());
 	}
 }
