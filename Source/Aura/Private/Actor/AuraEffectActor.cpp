@@ -116,7 +116,7 @@ void AAuraEffectActor::OnEndOverlap(AActor* TargetActor)
 	if (InfiniteEffectRemovalPolicy == EEffectRemovalPolicy::RemoveOnEndOverlap)
 	{
 		UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
-		if (IsValid(TargetASC)) return;
+		if (!IsValid(TargetASC)) return;
 
 		if (ActiveEffectHandles.Contains(TargetASC))
 		{

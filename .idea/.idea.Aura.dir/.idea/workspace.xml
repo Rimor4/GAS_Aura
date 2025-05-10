@@ -8,7 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/UI/WidgetController/OverlayWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/UI/WidgetController/OverlayWidgetController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Overlay/SubWidget/WBP_EffectMessage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Overlay/SubWidget/WBP_EffectMessage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/ProgressBar/WBP_GlobeProgressBarBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/ProgressBar/WBP_GlobeProgressBarBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/ProgressBar/WBP_HealthGlobe.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/ProgressBar/WBP_HealthGlobe.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/ProgressBar/WBP_ManaGlobe.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/ProgressBar/WBP_ManaGlobe.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Actor/AuraEffectActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Actor/AuraEffectActor.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +45,24 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/specstrings_strict.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt/corecrt_malloc.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/CommonUI/Source/CommonUI/CommonUI.Build.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,6 +85,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/UnrealEd/Private/Kismet2/KismetReinstanceUtilities.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/UnrealEd/Private/Subsystems/EditorActorSubsystem.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/AIModule/Private/AIController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/AnimGraphRuntime/Private/AnimExecutionContextLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/ApplicationCore/Public/GenericPlatform/ICursor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/AugmentedReality/Public/ARComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CUDA/Source/Private/CudaModule.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -246,6 +271,7 @@
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura.Target.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Actor/AuraEffectActor.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/HUD/AuraHUD.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -479,15 +505,7 @@
       <workItem from="1746715141714" duration="4638000" />
       <workItem from="1746757201631" duration="1892000" />
       <workItem from="1746760293813" duration="2348000" />
-      <workItem from="1746794131029" duration="5691000" />
-    </task>
-    <task id="LOCAL-00006" summary="Aura Player Controller">
-      <option name="closed" value="true" />
-      <created>1745595740378</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1745595740379</updated>
+      <workItem from="1746794131029" duration="10498000" />
     </task>
     <task id="LOCAL-00007" summary="Movement Input *">
       <option name="closed" value="true" />
@@ -873,7 +891,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746804516013</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Replacing Callbacks with Lambdas">
+      <option name="closed" value="true" />
+      <created>1746805112272</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1746805112272</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -894,7 +920,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Listening for Attribute Changes" />
     <MESSAGE value="Callbacks for Mana Changes" />
     <MESSAGE value="Effect Actor Improved" />
     <MESSAGE value="Instant Gameplay Effects" />
@@ -919,7 +944,8 @@
     <MESSAGE value="Broadcasting Data Table Rows" />
     <MESSAGE value="Message Widget" />
     <MESSAGE value="Animating the Message Widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animating the Message Widget" />
+    <MESSAGE value="Replacing Callbacks with Lambdas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replacing Callbacks with Lambdas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -945,6 +971,16 @@
           <url>file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/ActiveGameplayEffectHandle.h</url>
           <line>8</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/Aura/Private/Actor/AuraEffectActor.cpp</url>
+          <line>118</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h</url>
+          <line>1842</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
