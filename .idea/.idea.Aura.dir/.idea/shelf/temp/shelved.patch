@@ -1,0 +1,17 @@
+Index: Source/Aura/Private/Character/AuraCharacter.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n\r\n#include \"Character/AuraCharacter.h\"\r\n#include \"AbilitySystemComponent.h\"\r\n#include \"AbilitySystem/AuraAbilitySystemComponent.h\"\r\n#include \"GameFramework/CharacterMovementComponent.h\"\r\n#include \"Player/AuraPlayerState.h\"\r\n\r\nAAuraCharacter::AAuraCharacter()\r\n{\r\n\tGetCharacterMovement()->bOrientRotationToMovement = true;\r\n\tGetCharacterMovement()->RotationRate = FRotator(0.f, 400.f, 0.f);\r\n\tGetCharacterMovement()->bConstrainToPlane = true;\r\n\tGetCharacterMovement()->bSnapToPlaneAtStart = true;\r\n\r\n\tbUseControllerRotationPitch = false;\r\n\tbUseControllerRotationYaw = false;\r\n\tbUseControllerRotationRoll = false;\r\n}\r\n\r\nvoid AAuraCharacter::PossessedBy(AController* NewController)\r\n{\r\n\tSuper::PossessedBy(NewController);\r\n\r\n\t// Init ability actor info for the Server\r\n\tInitAbilityActorInfo();\r\n}\r\n\r\nvoid AAuraCharacter::OnRep_PlayerState()\r\n{\r\n\tSuper::OnRep_PlayerState();\r\n\r\n\t// Init ability actor info for the Client\r\n\tInitAbilityActorInfo();\r\n}\r\n\r\nvoid AAuraCharacter::InitAbilityActorInfo()\r\n{\r\n\tAAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();\r\n\tcheck(AuraPlayerState);\r\n\r\n\tAbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();\r\n\tAttributeSet = AuraPlayerState->GetAttributeSet();\r\n\tAbilitySystemComponent->InitAbilityActorInfo(AuraPlayerState, this);\r\n\tCast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->OnAbilityActorInfoSet();\r\n\r\n\tInitializePrimaryAttributes();\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Private/Character/AuraCharacter.cpp b/Source/Aura/Private/Character/AuraCharacter.cpp
+--- a/Source/Aura/Private/Character/AuraCharacter.cpp	(revision 5f69b22be412b7b105bea6fcd88a028f8adf859b)
++++ b/Source/Aura/Private/Character/AuraCharacter.cpp	(date 1746931478054)
+@@ -45,5 +45,5 @@
+ 	AbilitySystemComponent->InitAbilityActorInfo(AuraPlayerState, this);
+ 	Cast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->OnAbilityActorInfoSet();
+ 
+-	InitializePrimaryAttributes();
++	InitializeDefaultAttributes();
+ }

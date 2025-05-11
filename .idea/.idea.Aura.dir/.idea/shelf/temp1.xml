@@ -1,0 +1,11 @@
+<changelist name="temp1" date="1746931789812" recycled="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/shelf/temp1/shelved.patch" />
+  <option name="DESCRIPTION" value="temp" />
+  <binary>
+    <option name="AFTER_PATH" value="Content/Blueprints/AbilitySystem/GameplayEffect/DefaultAttributes/GE_AuraSecondaryAttributes.uasset" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/shelf/temp1/GE_AuraSecondaryAttributes.uasset" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Content/Blueprints/AbilitySystem/GameplayEffect/PrimaryAttributes/GE_AuraPrimaryAttributes.uasset" />
+  </binary>
+</changelist>
