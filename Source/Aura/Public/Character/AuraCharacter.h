@@ -21,6 +21,12 @@ public:
 	
 	virtual void OnRep_PlayerState() override;
 
+#pragma region Combat Interface
+	
+	virtual int32 GetPlayerLevel() override;
+	
+#pragma endregion 
+
 private:
 	virtual void InitAbilityActorInfo() override;
 };
