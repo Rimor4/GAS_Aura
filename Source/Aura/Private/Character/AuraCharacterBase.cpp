@@ -26,6 +26,9 @@ void AAuraCharacterBase::InitializeDefaultAttributes() const
 {
 	ApplyEffectToSelf(DefaultPrimaryAttributes);
 	ApplyEffectToSelf(DefaultSecondaryAttributes);
+
+	// Vital Attributes (Health and Mana) are dependent on Secondary Attributes (Max Health and Max Mana)
+	ApplyEffectToSelf(DefaultVitalAttributes);
 }
 
 void AAuraCharacterBase::ApplyEffectToSelf(const TSubclassOf<UGameplayEffect>& GameplayEffectClass, float Level) const
