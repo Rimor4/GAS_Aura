@@ -1475,14 +1475,6 @@
       <workItem from="1746760293813" duration="2348000" />
       <workItem from="1746794131029" duration="29127000" />
     </task>
-    <task id="LOCAL-00014" summary="The Player State">
-      <option name="closed" value="true" />
-      <created>1745761699189</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1745761699189</updated>
-    </task>
     <task id="LOCAL-00015" summary="Ability System Component and Attribute Set">
       <option name="closed" value="true" />
       <created>1745762350030</created>
@@ -1867,7 +1859,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746956836520</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Attribute Menu - Framed Value">
+      <option name="closed" value="true" />
+      <created>1746967649097</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1746967649097</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1888,7 +1888,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="hud第一次加载bug修复" />
     <MESSAGE value="Infinite Effect Application and Removal" />
     <MESSAGE value="fix HUD初始化时OverlayWidgetClass检出异常" />
     <MESSAGE value="Clean Code" />
@@ -1913,7 +1912,8 @@
     <MESSAGE value="Player Level and Combat Interface" />
     <MESSAGE value="Modifier Magnitude Calculations" />
     <MESSAGE value="Initializing Vital Attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initializing Vital Attributes" />
+    <MESSAGE value="Attribute Menu - Framed Value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attribute Menu - Framed Value" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
