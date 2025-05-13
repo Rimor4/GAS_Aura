@@ -4,7 +4,6 @@
 #include "AuraGameplayTags.h"
 
 #include "GameplayTagsManager.h"
-#include "GameplayTagsSettings.h"
 
 FAuraGameplayTags FAuraGameplayTags::GameplayTags;
 
