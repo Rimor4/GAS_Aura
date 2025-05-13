@@ -18,7 +18,24 @@ public:
 
 	static void InitializeNativeGameplayTags();
 
+	#pragma region Primary Attributes
+	FGameplayTag Attributes_Primary_Strength;
+	FGameplayTag Attributes_Primary_Intelligence;
+	FGameplayTag Attributes_Primary_Resilience;
+	FGameplayTag Attributes_Primary_Vigor;
+	#pragma endregion
+
+	#pragma region Secondary Attributes
+	FGameplayTag Attributes_Secondary_MaxHealth;
+	FGameplayTag Attributes_Secondary_MaxMana;
 	FGameplayTag Attributes_Secondary_Armor;
+	FGameplayTag Attributes_Secondary_ArmorPenetration;
+	FGameplayTag Attributes_Secondary_BlockChance;
+	FGameplayTag Attributes_Secondary_CritChance;
+	FGameplayTag Attributes_Secondary_CritDamageMultiplier;
+	FGameplayTag Attributes_Secondary_HealthRegen;
+	FGameplayTag Attributes_Secondary_ManaRegen;
+	#pragma endregion
 	
 private:
 	static FAuraGameplayTags GameplayTags;
