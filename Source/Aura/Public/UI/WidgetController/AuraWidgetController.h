@@ -45,7 +45,7 @@ public:
 	
 	virtual void BroadcastInitialValues();
 
-	virtual void BindCallbackToDependencies();
+	virtual void BindCallbacksToDependencies();
 	
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "WidgetController")
