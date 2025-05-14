@@ -24,7 +24,9 @@ public:
 
 	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 	
-	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& WCParams);
+	UOverlayWidgetController* GetOrCreateOverlayWidgetController(const FWidgetControllerParams& WCParams);
+
+	UOverlayWidgetController* GetOverlayWidgetController() const { return OverlayWidgetController; }
 
 private:
 	UPROPERTY(EditAnywhere)
