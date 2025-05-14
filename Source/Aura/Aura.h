@@ -4,4 +4,15 @@
 
 #include "CoreMinimal.h"
 
-inline constexpr int32 HighlightDepthStencilValue = 250;
+
+#pragma region Delegate
+
+template<class T>
+using TStaticFuncPtr = typename TBaseStaticDelegateInstance<T, FDefaultDelegateUserPolicy>::FFuncPtr;
+
+#pragma endregion 
+
+
+#pragma region Const
+
+#pragma endregion

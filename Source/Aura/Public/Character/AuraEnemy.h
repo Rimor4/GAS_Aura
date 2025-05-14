@@ -7,6 +7,8 @@
 #include "Interaction/EnemyInterface.h"
 #include "AuraEnemy.generated.h"
 
+inline constexpr int32 HighlightDepthStencilValue = 250;
+
 /**
  * 
  */

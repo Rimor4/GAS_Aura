@@ -7,11 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="Widget Attribute Tags">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/AttributeMenu/WBP_AttributeMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/AttributeMenu/WBP_AttributeMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/AttributeMenu/WBP_TextValueRow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/AttributeMenu/WBP_TextValueRow.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/Data/AttributeInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/Data/AttributeInfo.h" afterDir="false" />
+    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Aura.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Aura.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraEnemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Util/AuraUtils.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,50 +52,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/specstrings_strict.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt/corecrt_malloc.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Plugins/Runtime/CommonUI/Source/CommonUI/CommonUI.Build.cs" root0="SKIP_HIGHLIGHTING" />
@@ -120,6 +78,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/DetailCustomizations/Private/ParticleModuleDetails.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/Kismet/Public/BlueprintEditor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/LevelEditor/Public/LevelEditorSubsystem.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/UMGEditor/Private/Designer/DesignerCommands.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/UnrealEd/Classes/Editor/EditorEngine.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/UnrealEd/Private/EditorEngine.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Editor/UnrealEd/Private/Factories/ActorFactory.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -134,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CUDA/Source/Private/CudaModule.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Private/HAL/LowLevelMemTracker.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Private/HAL/MallocAnsi.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Private/Internationalization/Text.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Private/Logging/StructuredLog.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Private/Memory/LinearAllocator.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Private/Misc/MTAccessDetector.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -154,7 +114,9 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateAccessHandler.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateBase.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateCombinations.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstanceInterface.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImplFwd.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/IDelegateInstance.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Delegates/MulticastDelegateBase.h" root0="FORCE_HIGHLIGHTING" />
@@ -181,6 +143,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Serialization/Archive.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Stats/Stats2.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/Atomic.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/Function.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/Invoke.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/MemoryOps.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/Core/Public/Templates/SharedPointer.h" root0="FORCE_HIGHLIGHTING" />
@@ -223,6 +186,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/SoftObjectPtr.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/SparseDelegate.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectAllocator.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectBase.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectGlobals.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectHash.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Epic/epicapps/UE_5.5/Engine/Source/Runtime/CoreUObject/Public/UObject/UnrealType.h" root0="FORCE_HIGHLIGHTING" />
@@ -354,19 +318,13 @@
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/OverlayWidgetController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura.Target.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AuraGameplayTags.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AuraGameplayTags.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AuraGameplayTags.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/UI/HUD/AuraHUD.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/UI/HUD/AuraHUD.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/HUD/AuraHUD.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/Widget/AuraUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/HUD/AuraHUD.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/Widget/AuraUserWidget.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/UI/WidgetController/AttributeMenuController.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/WidgetController/AuraWidgetController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/WidgetController/OverlayWidgetController.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -595,15 +553,7 @@
       <workItem from="1746760293813" duration="2348000" />
       <workItem from="1746794131029" duration="29127000" />
       <workItem from="1747055973694" duration="23083000" />
-      <workItem from="1747211250839" duration="1065000" />
-    </task>
-    <task id="LOCAL-00032" summary="Instant Gameplay Effects">
-      <option name="closed" value="true" />
-      <created>1746189876780</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1746189876780</updated>
+      <workItem from="1747211250839" duration="6165000" />
     </task>
     <task id="LOCAL-00033" summary="Duration Gameplay Effects">
       <option name="closed" value="true" />
@@ -989,7 +939,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747189826263</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Widget Attribute Tags">
+      <option name="closed" value="true" />
+      <created>1747213996944</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1747213996945</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1010,7 +968,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Replacing Callbacks with Lambdas" />
     <MESSAGE value="Ghost Globe*" />
     <MESSAGE value="Ghost Globe *" />
     <MESSAGE value="Properly Clamping Attributes" />
@@ -1035,7 +992,8 @@
     <MESSAGE value="Aura Ability System Blueprint Library`" />
     <MESSAGE value="Constructing the Attribute Menu Widget Controller" />
     <MESSAGE value="Attribute Info Delegate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attribute Info Delegate" />
+    <MESSAGE value="Widget Attribute Tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Widget Attribute Tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
