@@ -39,7 +39,7 @@ void UAttributeMenuController::BindCallbacksToDependencies()
 void UAttributeMenuController::BroadcastAttributeInfo(const FGameplayTag& AttributeTag,
 	const FGameplayAttribute& Attribute) const
 {
-	FAuraAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(AttributeTag);
+	FAuraAttributeInfo Info = AttributeInfo->GetAttributeInfoForTag(AttributeTag);
 	Info.AttributeValue = Attribute.GetNumericValue(AttributeSet);
 	AttributeInfoDelegate.Broadcast(Info);
 }

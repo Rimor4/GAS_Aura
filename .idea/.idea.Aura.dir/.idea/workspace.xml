@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="Responding to Attribute Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/Data/DA_AttributeInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/Data/DA_AttributeInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/UI/WidgetController/AttributeMenuController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/UI/WidgetController/AttributeMenuController.h" afterDir="false" />
-    </list>
+    <list default="true" id="0d84376c-4cfb-4619-b8b4-bdb729199e1c" name="Changes" comment="Input Config Data Asset" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -314,21 +309,14 @@
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/OverlayWidgetController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura.Target.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AuraAbilitySystemComponent.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/HUD/AuraHUD.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/UI/Widget/AuraUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/UI/WidgetController/AttributeMenuController.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Character/AuraEnemy.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Character/AuraEnemy.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/HUD/AuraHUD.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/Widget/AuraUserWidget.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/UI/WidgetController/AttributeMenuController.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/WidgetController/AuraWidgetController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/UI/WidgetController/OverlayWidgetController.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -559,22 +547,7 @@
       <workItem from="1747055973694" duration="23083000" />
       <workItem from="1747211250839" duration="7586000" />
       <workItem from="1747221587732" duration="417000" />
-    </task>
-    <task id="LOCAL-00035" summary="Periodic Gameplay Effects">
-      <option name="closed" value="true" />
-      <created>1746238264543</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1746238264543</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Effect Stacking">
-      <option name="closed" value="true" />
-      <created>1746239162774</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1746239162774</updated>
+      <workItem from="1747231852231" duration="3964000" />
     </task>
     <task id="LOCAL-00037" summary="Infinite Gameplay Effects">
       <option name="closed" value="true" />
@@ -952,7 +925,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747217962552</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Responding to Attribute Changes">
+      <option name="closed" value="true" />
+      <created>1747231911657</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1747231911658</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Granting Abilities">
+      <option name="closed" value="true" />
+      <created>1747233922853</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1747233922853</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -973,7 +962,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Properly Clamping Attributes" />
     <MESSAGE value="自定义宏声明属性失败" />
     <MESSAGE value="Secondary Attributes &amp; Derived Attributes" />
     <MESSAGE value="Player Level and Combat Interface" />
@@ -996,9 +984,10 @@
     <MESSAGE value="Constructing the Attribute Menu Widget Controller" />
     <MESSAGE value="Attribute Info Delegate" />
     <MESSAGE value="Widget Attribute Tags" />
-    <MESSAGE value="Responding to Attribute Changes" />
     <MESSAGE value="Mapping Tags to Attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mapping Tags to Attributes" />
+    <MESSAGE value="Responding to Attribute Changes" />
+    <MESSAGE value="Granting Abilities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Granting Abilities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
