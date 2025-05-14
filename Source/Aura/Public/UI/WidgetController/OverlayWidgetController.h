@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "Structs/UI/UIWidgetRow.h"
 #include "UI/WidgetController/AuraWidgetController.h"
 #include "OverlayWidgetController.generated.h"
@@ -22,8 +21,15 @@ class AURA_API UOverlayWidgetController : public UAuraWidgetController
 	GENERATED_BODY()
 
 public:
+	virtual void InitWidget() override;
 	virtual void BroadcastInitialValues() override;
 	virtual void BindCallbacksToDependencies() override;
+
+	UPROPERTY()
+	TObjectPtr<UAuraUserWidget> OverlayWidget;
+
+	UPROPERTY(EditAnywhere)
+	TSoftClassPtr<UAuraUserWidget> OverlayWidgetClass;
 
 	UPROPERTY(BlueprintAssignable, Category = "GAS|Attributes")
 	FOnAttributeChangedSignature OnHealthChanged;
@@ -44,13 +50,5 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widget Data")
 	TObjectPtr<UDataTable> MessageWidgetDataTable;
 	
-	template<typename T>
-	T* GetDataTableRowByTag(UDataTable* DataTable, const FGameplayTag& Tag);
 };
 
-// TODO: 放到通用库里
-template <typename T>
-T* UOverlayWidgetController::GetDataTableRowByTag(UDataTable* DataTable, const FGameplayTag& Tag)
-{
-	return DataTable->FindRow<T>(Tag.GetTagName(), TEXT(""));
-}

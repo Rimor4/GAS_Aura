@@ -5,6 +5,38 @@
 
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "AbilitySystem/AuraAttributeSet.h"
+#include "Blueprint/UserWidget.h"
+#include "Engine/AssetManager.h"
+#include "UI/Widget/AuraUserWidget.h"
+#include "Util/AuraUtils.h"
+
+
+struct FStreamableManager;
+
+void UOverlayWidgetController::InitWidget()
+{
+	checkf(!OverlayWidgetClass.IsNull(), TEXT("Overlay Widget Class unassigned, please fill out BP_AuraHUD"));
+
+	// TODO: 统一管理异步加载和延迟显示
+	FStreamableManager& Streamable = UAssetManager::GetStreamableManager();
+	Streamable.RequestAsyncLoad(OverlayWidgetClass.ToSoftObjectPath(), [this]()
+	{
+		if (UClass* LoadedClass = OverlayWidgetClass.Get())
+		{
+			OverlayWidget = CreateWidget<UAuraUserWidget>(GetWorld(), LoadedClass);
+			if (OverlayWidget)
+			{
+				OverlayWidget->SetWidgetController(this);
+				this->BroadcastInitialValues();
+				
+				GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
+				{
+					OverlayWidget->AddToViewport();
+				});
+			}
+		}
+	});
+}
 
 void UOverlayWidgetController::BroadcastInitialValues()
 {
@@ -51,7 +83,7 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 				if (Tag.MatchesTag(MessageTag))
 				{
-					const FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
+					const FUIWidgetRow* Row = FAuraUtils::GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
 					MessageWidgetRowDelegate.Broadcast(*Row);
 				}
 			}
