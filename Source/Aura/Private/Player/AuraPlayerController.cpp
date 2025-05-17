@@ -4,6 +4,8 @@
 #include "Player/AuraPlayerController.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "GameplayTagContainer.h"
+#include "Input/AuraInputComponent.h"
 #include "Interaction/EnemyInterface.h"
 #include "Player/AuraPlayerState.h"
 #include "UI/HUD/AuraHUD.h"
@@ -76,20 +78,19 @@ void AAuraPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+	UAuraInputComponent* AuraInputComponent = CastChecked<UAuraInputComponent>(InputComponent);
 
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
+	AuraInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
+	AuraInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed,
+	                                       &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
 
-/**
- * @param InputActionValue 玩家(按下WASD键时的)输入
- */
 void AAuraPlayerController::Move(const FInputActionValue& InputActionValue)
 {
 	if (APawn* ControlledPawn = GetPawn<APawn>())
 	{
 		const FVector2D InputAxisVector = InputActionValue.Get<FVector2D>();
-		
+
 		const FRotator Rotation = GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
@@ -115,6 +116,18 @@ void AAuraPlayerController::CursorTrace()
 		if (LastActor) LastActor->UnHighlightActor();
 		if (ThisActor) ThisActor->HighlightActor();
 	}
+}
+
+void AAuraPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
+{
+}
+
+void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
+{
+}
+
+void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
+{
 }
 
 #pragma endregion
