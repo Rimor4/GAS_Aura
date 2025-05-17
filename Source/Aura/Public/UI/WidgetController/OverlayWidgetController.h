@@ -28,7 +28,7 @@ public:
 	UPROPERTY()
 	TObjectPtr<UAuraUserWidget> OverlayWidget;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta=(MetaClass="AuraUserWidget"))
 	TSoftClassPtr<UAuraUserWidget> OverlayWidgetClass;
 
 	UPROPERTY(BlueprintAssignable, Category = "GAS|Attributes")
