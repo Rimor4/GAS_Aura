@@ -4,11 +4,12 @@
 #include "Player/AuraPlayerController.h"
 
 #include "AbilitySystemBlueprintLibrary.h"
+#include "AuraGameplayTags.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "GameplayTagContainer.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
-#include "AbilitySystem/AuraAbilitySystemLibrary.h"
+#include "Components/SplineComponent.h"
 #include "Input/AuraInputComponent.h"
 #include "Interaction/EnemyInterface.h"
 #include "Player/AuraPlayerState.h"
@@ -21,6 +22,8 @@ class AAuraHUD;
 AAuraPlayerController::AAuraPlayerController()
 {
 	bReplicates = true;
+
+	Spline = CreateDefaultSubobject<USplineComponent>("Spline");
 }
 
 void AAuraPlayerController::BeginPlay()
@@ -122,20 +125,49 @@ void AAuraPlayerController::CursorTrace()
 	}
 }
 
-void AAuraPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
+void AAuraPlayerController::AbilityInputTagPressed(const FGameplayTag InputTag)
 {
+	// 鼠标左键按下
+	FAuraGameplayTags AuraGameplayTags = FAuraGameplayTags::Get();
+	if (InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
+	{
+		bTargeting = ThisActor != nullptr;
+
+		// 此时还不知道是 短按松开 还是 长按
+		bAutoRunning = false;
+	}
 }
 
-void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
+void AAuraPlayerController::AbilityInputTagReleased(const FGameplayTag InputTag)
 {
 	if (GetASC() == nullptr) return;
 	GetASC()->AbilityInputTagReleased(InputTag);
 }
 
-void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
+void AAuraPlayerController::AbilityInputTagHeld(const FGameplayTag InputTag)
 {
-	if (GetASC() == nullptr) return;
-	GetASC()->AbilityInputTagHeld(InputTag);
+	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB) or bTargeting)
+	{
+		if (GetASC())
+		{
+			GetASC()->AbilityInputTagHeld(InputTag);
+		}
+		return;
+	}
+
+	// 长按移动状态
+	FollowTime += GetWorld()->GetDeltaSeconds();
+
+	if (FHitResult Hit; GetHitResultUnderCursor(ECC_Visibility, false, Hit))
+	{
+		CachedDestination = Hit.ImpactPoint;
+	}
+
+	if (APawn* ControlledPawn = GetPawn())
+	{
+		const FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
+		ControlledPawn->AddMovementInput(WorldDirection);
+	}
 }
 
 #pragma endregion
@@ -157,7 +189,8 @@ UAuraAbilitySystemComponent* AAuraPlayerController::GetASC()
 {
 	if (AuraAbilitySystemComponent == nullptr)
 	{
-		AuraAbilitySystemComponent = Cast<UAuraAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
+		AuraAbilitySystemComponent = Cast<UAuraAbilitySystemComponent>(
+			UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
 	}
 	return AuraAbilitySystemComponent;
 }

@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "AuraPlayerController.generated.h"
 
+class USplineComponent;
 class UAuraAbilitySystemComponent;
 struct FGameplayTag;
 class UAuraInputConfig;
@@ -57,13 +58,13 @@ private:
 	 */
 	void CursorTrace();
 	
-	IEnemyInterface* LastActor;
+	IEnemyInterface* LastActor = nullptr;
 	
-	IEnemyInterface* ThisActor;
+	IEnemyInterface* ThisActor = nullptr;
 
-	void AbilityInputTagPressed(FGameplayTag InputTag);
-	void AbilityInputTagReleased(FGameplayTag InputTag);
-	void AbilityInputTagHeld(FGameplayTag InputTag);
+	void AbilityInputTagPressed(const FGameplayTag InputTag);
+	void AbilityInputTagReleased(const FGameplayTag InputTag);
+	void AbilityInputTagHeld(const FGameplayTag InputTag);
 
 	UPROPERTY(EditDefaultsOnly, Category="Input")
 	TObjectPtr<UAuraInputConfig> InputConfig;
@@ -72,4 +73,24 @@ private:
 	TObjectPtr<UAuraAbilitySystemComponent> AuraAbilitySystemComponent;
 
 	UAuraAbilitySystemComponent* GetASC();
+
+	// 玩家光标是否正在瞄准某个物体
+	bool bTargeting = false;
+
+#pragma region Click to Move
+	FVector CachedDestination = FVector::ZeroVector;
+	
+	float FollowTime = 0.f;
+	
+	float ShortPressThreshold = 0.5f;
+
+	// 玩家是否将要在鼠标点击地面后自动移动
+	bool bAutoRunning = false;
+	
+	UPROPERTY(EditDefaultsOnly)
+	float AutoRunAcceptanceRadius = 50.f;
+
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<USplineComponent> Spline;
+#pragma endregion
 };
