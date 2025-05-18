@@ -134,9 +134,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" afterDir="false" />
     </list>
@@ -356,8 +353,11 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Aura.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Input/AuraInputConfig.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -29101,7 +29101,7 @@
       <workItem from="1747396848705" duration="613000" />
       <workItem from="1747397484405" duration="22662000" />
       <workItem from="1747467061101" duration="1655000" />
-      <workItem from="1747532579363" duration="7051000" />
+      <workItem from="1747532579363" duration="8400000" />
     </task>
     <task id="LOCAL-00001" summary="Aura Input Component">
       <option name="closed" value="true" />
@@ -29135,7 +29135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747537739339</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implementing Auto Running">
+      <option name="closed" value="true" />
+      <created>1747540379006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747540379006</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29193,7 +29201,8 @@
     <MESSAGE value="Aura Input Component" />
     <MESSAGE value="Activating Abilities" />
     <MESSAGE value="Setting Up Auto Running" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting Up Auto Running" />
+    <MESSAGE value="Implementing Auto Running" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Auto Running" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -29210,11 +29219,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/Aura/Private/AuraAssetManager.cpp</url>
-          <line>17</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

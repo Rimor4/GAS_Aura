@@ -98,7 +98,6 @@ void AAuraPlayerController::SetupInputComponent()
 
 void AAuraPlayerController::CursorTrace()
 {
-	FHitResult CursorHit;
 	GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);
 	if (!CursorHit.bBlockingHit) return;
 
@@ -143,7 +142,9 @@ void AAuraPlayerController::AbilityInputTagReleased(const FGameplayTag InputTag)
 			for (const FVector& PointLoc : NavPath->PathPoints)
 			{
 				Spline->AddSplinePoint(PointLoc, ESplineCoordinateSpace::World);
+#if WITH_EDITOR
 				DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
+#endif
 			}
 			bAutoRunning = true;
 		}
@@ -166,9 +167,9 @@ void AAuraPlayerController::AbilityInputTagHeld(const FGameplayTag InputTag)
 	// 鼠标左键长按移动状态
 	FollowTime += GetWorld()->GetDeltaSeconds();
 
-	if (FHitResult Hit; GetHitResultUnderCursor(ECC_Visibility, false, Hit))
+	if (CursorHit.bBlockingHit)
 	{
-		CachedDestination = Hit.ImpactPoint;
+		CachedDestination = CursorHit.ImpactPoint;
 	}
 
 	if (APawn* ControlledPawn = GetPawn())

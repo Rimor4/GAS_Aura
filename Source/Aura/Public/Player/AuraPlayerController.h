@@ -27,7 +27,7 @@ class AURA_API AAuraPlayerController : public APlayerController
 
 public:
 	AAuraPlayerController();
-	
+
 	virtual void PlayerTick(float DeltaTime) override;
 
 	virtual void OnPossess(APawn* InPawn) override;
@@ -38,29 +38,16 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-	
+
 	virtual void SetupInputComponent() override;
 
 private:
+#pragma region Input
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputMappingContext> AuraContext;
 
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputAction> MoveAction;
-
-	/**
-	 * @param InputActionValue 玩家(按下WASD键时的)输入
-	 */
-	void Move(const struct FInputActionValue& InputActionValue);
-
-	/*
-	 * 高亮玩家光标下的敌人
-	 */
-	void CursorTrace();
-	
-	IEnemyInterface* LastActor = nullptr;
-	
-	IEnemyInterface* ThisActor = nullptr;
 
 	void AbilityInputTagPressed(const FGameplayTag InputTag);
 	void AbilityInputTagReleased(const FGameplayTag InputTag);
@@ -68,31 +55,53 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category="Input")
 	TObjectPtr<UAuraInputConfig> InputConfig;
+#pragma endregion
 
-	UPROPERTY()
-	TObjectPtr<UAuraAbilitySystemComponent> AuraAbilitySystemComponent;
 
-	UAuraAbilitySystemComponent* GetASC();
+	/**
+	 * @param InputActionValue 玩家(按下WASD键时的)输入
+	 */
+	void Move(const struct FInputActionValue& InputActionValue);
+
+
+#pragma region Cursor
+	/*
+	 * 高亮玩家光标下的敌人
+	 */
+	void CursorTrace();
+
+	IEnemyInterface* LastActor = nullptr;
+	IEnemyInterface* ThisActor = nullptr;
+
+	FHitResult CursorHit;
 
 	// 玩家光标是否正在瞄准某个物体
 	bool bTargeting = false;
+#pragma endregion
+
 
 #pragma region Click to Move
 	FVector CachedDestination = FVector::ZeroVector;
-	
+
 	float FollowTime = 0.f;
-	
+
 	float ShortPressThreshold = 0.5f;
 
 	// 玩家是否将要在鼠标点击地面后自动移动
 	bool bAutoRunning = false;
-	
+
 	UPROPERTY(EditDefaultsOnly)
 	float AutoRunAcceptanceRadius = 50.f;
 
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USplineComponent> Spline;
-	
+
 	void AutoRun();
 #pragma endregion
+
+
+	UPROPERTY()
+	TObjectPtr<UAuraAbilitySystemComponent> AuraAbilitySystemComponent;
+
+	UAuraAbilitySystemComponent* GetASC();
 };
