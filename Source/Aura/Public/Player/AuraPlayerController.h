@@ -96,6 +96,8 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USplineComponent> Spline;
 
+	void BuildAutoRunPathToTarget();
+	
 	void AutoRun();
 #pragma endregion
 

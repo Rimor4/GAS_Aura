@@ -37,6 +37,10 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "EditorUIScaleCustomization",
+			"Enabled": true
 		}
 	]
 }

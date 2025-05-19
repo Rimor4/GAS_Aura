@@ -136,18 +136,7 @@ void AAuraPlayerController::AbilityInputTagReleased(const FGameplayTag InputTag)
 	// 鼠标左键短按松开生成寻路路径
 	if (const APawn* ControlledPawn = GetPawn(); ControlledPawn && FollowTime <= ShortPressThreshold)
 	{
-		if (UNavigationPath* NavPath = UNavigationSystemV1::FindPathToLocationSynchronously(this, ControlledPawn->GetActorLocation(), CachedDestination))
-		{
-			Spline->ClearSplinePoints();
-			for (const FVector& PointLoc : NavPath->PathPoints)
-			{
-				Spline->AddSplinePoint(PointLoc, ESplineCoordinateSpace::World);
-#if WITH_EDITOR
-				DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
-#endif
-			}
-			bAutoRunning = true;
-		}
+		BuildAutoRunPathToTarget();
 	}
 
 	FollowTime = 0.f;
@@ -201,6 +190,56 @@ void AAuraPlayerController::Move(const FInputActionValue& InputActionValue)
 	}
 }
 
+void AAuraPlayerController::BuildAutoRunPathToTarget()
+{
+	if (const auto ControlledPawn = GetPawn<APawn>(); !ControlledPawn) return;
+	
+	const FVector PawnLocation = GetPawn()->GetActorLocation();
+	// 尝试将点击位置投影到导航网格
+	FNavLocation ProjectedLocation;
+	UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
+	bool bIsOnNavMesh = NavSys->ProjectPointToNavigation(CachedDestination, ProjectedLocation, FVector::ZeroVector, static_cast<const FNavAgentProperties*>(nullptr));
+	
+	if (!bIsOnNavMesh)
+	{
+		// 如果不在导航网格上，尝试选取网格上离目标位置最近的点
+		const FVector FootLocation = FVector(PawnLocation.X, PawnLocation.Y, CachedDestination.Z);
+		const FVector RaycastDirection = (FootLocation - CachedDestination).GetSafeNormal();
+		const float TotalDist = FVector::Dist(CachedDestination, FootLocation);
+		const float StepSize = AutoRunAcceptanceRadius;
+
+		// 分段采样
+		bool bOnNav = false;
+		for (float Dist = 0; Dist <= TotalDist; Dist += StepSize)
+		{
+			FVector SamplePoint = CachedDestination + RaycastDirection * Dist;
+			if (FNavLocation NavLoc; NavSys->ProjectPointToNavigation(SamplePoint, NavLoc, FVector::ZeroVector, static_cast<const FNavAgentProperties*>(nullptr)))
+			{
+				// 修正目标点
+				CachedDestination = NavLoc.Location;
+				bOnNav = true;
+				break;
+			}
+		}
+		
+		if (!bOnNav) return;
+	}
+
+	// 使用修正后的目标点进行路径查找
+	if (UNavigationPath* NavPath = UNavigationSystemV1::FindPathToLocationSynchronously(this, PawnLocation, CachedDestination))
+	{
+		Spline->ClearSplinePoints();
+		for (const FVector& PointLoc : NavPath->PathPoints)
+		{
+			Spline->AddSplinePoint(PointLoc, ESplineCoordinateSpace::World);
+#if WITH_EDITOR
+			DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
+#endif
+		}
+		bAutoRunning = true;
+	}
+}
+
 void AAuraPlayerController::AutoRun()
 {
 	if (!bAutoRunning) return;
@@ -213,7 +252,7 @@ void AAuraPlayerController::AutoRun()
 			ESplineCoordinateSpace::World);
 		ControllerPawn->AddMovementInput(Direction);
 		
-		const float DistanceToDestination = (LocationOnSpline - CachedDestination).Length();
+		const float DistanceToDestination = (FVector2D(LocationOnSpline.X, LocationOnSpline.Y) - FVector2D(CachedDestination.X, CachedDestination.Y)).Length();
 		if (DistanceToDestination <= AutoRunAcceptanceRadius)
 		{
 			bAutoRunning = false;
