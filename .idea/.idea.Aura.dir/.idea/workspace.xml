@@ -134,170 +134,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aura.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_AuraCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_AuraCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/StartupMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Player/AuraPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/BlackmagicMedia.uplugin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Config/BaseBlackmagicMedia.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/BlackmagicCore.build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicCoreModule.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicDevice.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicDevice.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicDeviceScanner.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicDeviceScanner.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicHelper.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicHelper.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicInputChannel.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicInputChannel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicLib.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicOutputChannel.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicOutputChannel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicVideoFormats.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/BlackmagicVideoFormats.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/Common.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/MemCpy.tps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/Platform/GenericPlatform.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/Platform/Linux/LinuxPlatform.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/Platform/Linux/LinuxPlatform.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/Platform/Win/WinPlatform.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/Platform/Win/WinPlatform.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/SSE2MemCpy.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/SSE2MemCpy.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/ThreadSafeObjectPool.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Private/ThreadSafeQueue.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Public/BlackmagicCoreModule.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Public/BlackmagicLib.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicCore/Public/BlackmagicReferencePtr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/BlackmagicMedia.Build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Assets/BlackmagicCustomTimeStep.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Assets/BlackmagicMediaSource.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Assets/BlackmagicTimecodeProvider.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Blackmagic/BlackmagicDeviceProvider.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/BlackmagicMediaDefinitions.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/BlackmagicMediaModule.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/BlackmagicMediaPrivate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Player/BlackmagicMediaPlayer.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Player/BlackmagicMediaPlayer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Shared/BlackmagicMediaAllowPlatformTypes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Private/Shared/BlackmagicMediaHidePlatformTypes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Public/BlackmagicCustomTimeStep.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Public/BlackmagicDeviceProvider.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Public/BlackmagicMediaDefinitions.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Public/BlackmagicMediaSource.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Public/BlackmagicTimecodeProvider.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMedia/Public/IBlackmagicMediaModule.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaEditor/BlackmagicMediaEditor.Build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaEditor/Private/BlackmagicMediaEditorModule.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaEditor/Private/Factories/BlackmagicMediaOutputFactoryNew.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaEditor/Private/Factories/BlackmagicMediaOutputFactoryNew.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaEditor/Private/Factories/BlackmagicMediaSourceFactoryNew.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaEditor/Private/Factories/BlackmagicMediaSourceFactoryNew.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaFactory/BlackmagicMediaFactory.Build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaFactory/Private/BlackmagicMediaFactoryModule.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/BlackmagicMediaOutput.Build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/Private/BlackmagicMediaCapture.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/Private/BlackmagicMediaOutput.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/Private/BlackmagicMediaOutputModule.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/Private/BlackmagicMediaOutputModule.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/Public/BlackmagicMediaCapture.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/BlackmagicMediaOutput/Public/BlackmagicMediaOutput.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/BlackmagicDecklinkSDK.tps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/BlackmagicSDK.build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/BuildForLinux.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/DecklinkAPI.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/DecklinkAPI.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/DecklinkAPI.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIConfiguration.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIConfiguration_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIConfiguration_v10_2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIConfiguration_v10_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIConfiguration_v10_5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIConfiguration_v10_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDeckControl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDiscovery.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDispatch.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDispatch_v10_11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDispatch_v10_8.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDispatch_v7_6.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIDispatch_v8_0.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIModes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPITypes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVersion.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVideoEncoderInput_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVideoInput_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVideoInput_v11_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVideoInput_v11_5_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVideoOutput_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPIVideoOutput_v11_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v10_2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v10_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v10_5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v10_6.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v10_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v11_5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v11_5_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v7_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v7_3.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v7_6.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v7_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v8_0.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v8_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v9_2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/DeckLinkAPI_v9_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Linux/LinuxCOM.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIConfiguration.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIConfiguration_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIConfiguration_v10_2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIConfiguration_v10_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIConfiguration_v10_5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIConfiguration_v10_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDeckControl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDiscovery.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDispatch.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDispatch_v10_11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDispatch_v10_8.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDispatch_v7_6.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIDispatch_v8_0.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIModes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIStreaming.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIStreaming_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPITypes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVersion.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVideoEncoderInput_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVideoInput_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVideoInput_v11_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVideoInput_v11_5_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVideoOutput_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPIVideoOutput_v11_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v10_11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v10_2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v10_4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v10_5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v10_6.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v10_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v11_5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v11_5_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v7_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v7_3.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v7_6.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v7_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v8_0.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v8_1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v9_2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Mac/DeckLinkAPI_v9_9.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/BlackmagicLib/Include/Win/DeckLinkAPIVersion.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Media/BlackmagicMedia/Source/ThirdParty/Build/Include/DeckLinkAPI_h.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +142,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="start" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../UnrealEngine-release" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -384,7 +234,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "Uproject.Aura.executor": "Debug",
     "ezargs.lastUsed": "",
-    "git-widget-placeholder": "start",
+    "git-widget-placeholder": "master",
     "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
@@ -29102,7 +28952,7 @@
       <workItem from="1747577048116" duration="7661000" />
       <workItem from="1747586303148" duration="12384000" />
       <workItem from="1747664717783" duration="5173000" />
-      <workItem from="1747670084924" duration="1843000" />
+      <workItem from="1747670084924" duration="2268000" />
     </task>
     <task id="LOCAL-00001" summary="Aura Input Component">
       <option name="closed" value="true" />
@@ -29144,7 +28994,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747540379006</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化：实现点击阻挡物时尝试寻找最近的导航网格点来寻路">
+      <option name="closed" value="true" />
+      <created>1747672192930</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747672192930</updated>
+    </task>
+    <task id="LOCAL-00007" summary="增加EditorUIScaleCustomization插件；删除Blackmagicxx插件">
+      <option name="closed" value="true" />
+      <created>1747672250769</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747672250769</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29155,12 +29021,12 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="main" />
+                  <option value="start" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="start" />
+                  <option value="main" />
                 </option>
               </RecentGroup>
             </list>
@@ -29178,14 +29044,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="implementing" />
+                        <option value="start" />
                       </list>
                     </value>
                   </entry>
@@ -29203,7 +29062,9 @@
     <MESSAGE value="Activating Abilities" />
     <MESSAGE value="Setting Up Auto Running" />
     <MESSAGE value="Implementing Auto Running" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Auto Running" />
+    <MESSAGE value="优化：实现点击阻挡物时尝试寻找最近的导航网格点来寻路" />
+    <MESSAGE value="增加EditorUIScaleCustomization插件；删除Blackmagicxx插件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加EditorUIScaleCustomization插件；删除Blackmagicxx插件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -29220,11 +29081,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp</url>
-          <line>253</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
