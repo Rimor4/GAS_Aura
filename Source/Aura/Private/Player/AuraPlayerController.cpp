@@ -203,26 +203,20 @@ void AAuraPlayerController::BuildAutoRunPathToTarget()
 	if (!bIsOnNavMesh)
 	{
 		// 如果不在导航网格上，尝试选取网格上离目标位置最近的点
+		// todo：这里假设都在一个平面
 		const FVector FootLocation = FVector(PawnLocation.X, PawnLocation.Y, CachedDestination.Z);
-		const FVector RaycastDirection = (FootLocation - CachedDestination).GetSafeNormal();
-		const float TotalDist = FVector::Dist(CachedDestination, FootLocation);
-		const float StepSize = AutoRunAcceptanceRadius;
-
-		// 分段采样
-		bool bOnNav = false;
-		for (float Dist = 0; Dist <= TotalDist; Dist += StepSize)
-		{
-			FVector SamplePoint = CachedDestination + RaycastDirection * Dist;
-			if (FNavLocation NavLoc; NavSys->ProjectPointToNavigation(SamplePoint, NavLoc, FVector::ZeroVector, static_cast<const FNavAgentProperties*>(nullptr)))
-			{
-				// 修正目标点
-				CachedDestination = NavLoc.Location;
-				bOnNav = true;
-				break;
-			}
-		}
 		
-		if (!bOnNav) return;
+		// 从脚部位置向目标点寻找阻塞点
+		FVector HitLocation; 
+		if (NavSys->NavigationRaycast(GetWorld(), FootLocation, CachedDestination, HitLocation))
+		{
+			CachedDestination = HitLocation;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("导航算法有误，未找到目标点"));
+			return;
+		}
 	}
 
 	// 使用修正后的目标点进行路径查找
