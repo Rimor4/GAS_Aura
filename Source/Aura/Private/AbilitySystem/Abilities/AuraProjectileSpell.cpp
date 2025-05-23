@@ -23,7 +23,7 @@ void UAuraProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 	if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(AvatarActor))
 	{
 		const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
-		FTransform SpawnTransform = FTransform(SocketLocation);
+		const FTransform SpawnTransform = FTransform(SocketLocation);
 
 		AAuraProjectile* Projectile = GetWorld()->SpawnActorDeferred<AAuraProjectile>(
 			ProjectileClass,
