@@ -2,7 +2,6 @@
 
 
 #include "Player/AuraPlayerController.h"
-
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AuraGameplayTags.h"
 #include "EnhancedInputSubsystems.h"
@@ -12,6 +11,7 @@
 #include "NavigationSystem.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "Components/SplineComponent.h"
+#include "Game/AuraGameStateBase.h"
 #include "Input/AuraInputComponent.h"
 #include "Interaction/EnemyInterface.h"
 #include "Player/AuraPlayerState.h"
@@ -49,15 +49,24 @@ void AAuraPlayerController::BeginPlay()
 	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 	InputModeData.SetHideCursorDuringCapture(false);
 	SetInputMode(InputModeData);
+
+	// 绑定交互模式的变化回调
+	AAuraGameStateBase* GameState = GetWorld()->GetGameState<AAuraGameStateBase>();
+	if (GameState)
+	{
+		GameState->OnIsTopDownChanged.AddDynamic(this, &ThisClass::IsTopDownChanged);
+	}
 }
 
 void AAuraPlayerController::PlayerTick(const float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
 
-	CursorTrace();
-
-	AutoRun();
+	if (bIsTopDown)
+	{
+		CursorTrace();
+		AutoRun();
+	}
 }
 
 void AAuraPlayerController::OnPossess(APawn* InPawn)
@@ -92,12 +101,29 @@ void AAuraPlayerController::SetupInputComponent()
 	UAuraInputComponent* AuraInputComponent = CastChecked<UAuraInputComponent>(InputComponent);
 
 	AuraInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
-	// AuraInputComponent->BindAction(ShiftAction, ETriggerEvent::Started, this, &AAuraPlayerController::ShiftPressed);
-	// AuraInputComponent->BindAction(ShiftAction, ETriggerEvent::Completed, this, &AAuraPlayerController::ShiftReleased);
 
 	// 所有的（DA格式）技能输入都绑定到这三个函数中
 	AuraInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed,
 	                                       &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
+}
+
+void AAuraPlayerController::IsTopDownChanged(const bool bNewIsTopDown)
+{
+	if (bNewIsTopDown == bIsTopDown) return;
+
+	// TODO:切换IMC
+	if (bNewIsTopDown)
+	{
+		// // 进入上帝视角
+		// SetViewTargetWithBlend(this, 0.5f);
+	}
+	else
+	{
+		// // 进入第一人称视角
+		// SetViewTargetWithBlend(GetPawn(), 0.5f);
+	}
+	
+	bIsTopDown = bNewIsTopDown;
 }
 
 void AAuraPlayerController::CursorTrace()
@@ -117,61 +143,70 @@ void AAuraPlayerController::CursorTrace()
 
 void AAuraPlayerController::AbilityInputTagPressed(const FGameplayTag InputTag)
 {
-	// 鼠标左键按下
-	if (InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
+	if (bIsTopDown)
 	{
-		bTargeting = ThisActor != nullptr;
+		// 鼠标左键按下
+		if (InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
+		{
+			bTargeting = ThisActor != nullptr;
 
-		bAutoRunning = false;
+			bAutoRunning = false;
+		}
 	}
 }
 
 void AAuraPlayerController::AbilityInputTagReleased(const FGameplayTag InputTag)
 {
-	// TODO: 走A.
-	
-	// 无论按键，都调Release
-	if (GetASC())
+	if (bIsTopDown)
 	{
-		GetASC()->AbilityInputTagReleased(InputTag);
-	}
-
-	// 鼠标左键短按松开（没有瞄准目标时）生成寻路路径
-	if (!bTargeting && InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
-	{
-		if (const APawn* ControlledPawn = GetPawn(); ControlledPawn && FollowTime <= ShortPressThreshold)
+		// TODO: 走A.
+		
+		// 无论按键，都调Release
+		if (GetASC())
 		{
-			BuildAutoRunPathToTarget();
+			GetASC()->AbilityInputTagReleased(InputTag);
 		}
 
-		FollowTime = 0.f;
+		// 鼠标左键短按松开（没有瞄准目标时）生成寻路路径
+		if (!bTargeting && InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
+		{
+			if (const APawn* ControlledPawn = GetPawn(); ControlledPawn && FollowTime <= ShortPressThreshold)
+			{
+				BuildAutoRunPathToTarget();
+			}
+
+			FollowTime = 0.f;
+		}
 	}
 }
 
 void AAuraPlayerController::AbilityInputTagHeld(const FGameplayTag InputTag)
 {
-	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB) or bTargeting)
+	if (bIsTopDown)
 	{
-		// 非"鼠标左键瞄准敌人"时，触发技能
-		if (GetASC())
+		if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB) or bTargeting)
 		{
-			GetASC()->AbilityInputTagHeld(InputTag);
+			// 非"鼠标左键瞄准敌人"时，触发技能
+			if (GetASC())
+			{
+				GetASC()->AbilityInputTagHeld(InputTag);
+			}
+			return;
 		}
-		return;
-	}
 
-	// 鼠标左键长按移动状态
-	FollowTime += GetWorld()->GetDeltaSeconds();
+		// 鼠标左键长按移动状态
+		FollowTime += GetWorld()->GetDeltaSeconds();
 
-	if (CursorHit.bBlockingHit)
-	{
-		CachedDestination = CursorHit.ImpactPoint;
-	}
+		if (CursorHit.bBlockingHit)
+		{
+			CachedDestination = CursorHit.ImpactPoint;
+		}
 
-	if (APawn* ControlledPawn = GetPawn())
-	{
-		const FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
-		ControlledPawn->AddMovementInput(WorldDirection);
+		if (APawn* ControlledPawn = GetPawn())
+		{
+			const FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
+			ControlledPawn->AddMovementInput(WorldDirection);
+		}
 	}
 }
 
