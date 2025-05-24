@@ -133,10 +133,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
+    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="Projectile Impact">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Assets/Characters/Aura/Animations/Abilities/AM_Cast_FireBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Characters/Aura/Animations/Abilities/AM_Cast_FireBolt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_AuraCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Character/Aura/BP_AuraCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Interaction/CombatInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Interaction/CombatInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/FireBolt/GA_FireBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/FireBolt/GA_FireBolt.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Overlay/WBP_Overlap.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Overlay/WBP_Overlap.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Aura.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Aura.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Actor/AuraProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Actor/AuraProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Actor/AuraProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Actor/AuraProjectile.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,29 +235,7 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Visual Studio/VC/Tools/MSVC/14.44.35207/include/xatomic.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AbilityTasks/TargetDataUnderMouse.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Actor/AuraProjectile.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Input/AuraInputConfig.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -279,17 +261,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Uproject.Aura.executor&quot;: &quot;Debug&quot;,
-    &quot;ezargs.lastUsed&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;start&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Uproject.Aura.executor": "Debug",
+    "ezargs.lastUsed": "",
+    "git-widget-placeholder": "start",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Uproject.Aura">
     <configuration name="UnrealAndroidFileTool: UAFT-linux-x64" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish publish_profile="UAFT-linux-x64.pubxml" pubxml_path="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/Programs/UnrealAndroidFileTool/Properties/PublishProfiles/UAFT-linux-x64.pubxml" uuid_high="7955553615007426355" uuid_low="1901880150328835101" />
@@ -29248,7 +29230,8 @@
       <workItem from="1747664717783" duration="5173000" />
       <workItem from="1747670084924" duration="20647000" />
       <workItem from="1747968368013" duration="14462000" />
-      <workItem from="1748009509727" duration="17828000" />
+      <workItem from="1748009509727" duration="22918000" />
+      <workItem from="1748077772158" duration="5024000" />
     </task>
     <task id="LOCAL-00001" summary="Aura Input Component">
       <option name="closed" value="true" />
@@ -29426,7 +29409,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748058890277</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Motion Warping">
+      <option name="closed" value="true" />
+      <created>1748060720219</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1748060720219</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29493,7 +29484,8 @@
     <MESSAGE value="Receiving Target Data" />
     <MESSAGE value="Orienting the Projectile" />
     <MESSAGE value="初步实现两种交互模式(TopDown/Over-Shoulder)切换逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="初步实现两种交互模式(TopDown/Over-Shoulder)切换逻辑" />
+    <MESSAGE value="Motion Warping" />
+    <option name="LAST_COMMIT_MESSAGE" value="Motion Warping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -29523,12 +29515,22 @@
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Source/Aura/Private/Game/AuraGameStateBase.cpp</url>
           <line>17</line>
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Source/Aura/Private/Game/AuraGameModeBase.cpp</url>
           <line>15</line>
-          <option name="timeStamp" value="23" />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp</url>
+          <line>111</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp</url>
+          <line>54</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

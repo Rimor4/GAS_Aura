@@ -3,14 +3,17 @@
 
 #include "Actor/AuraProjectile.h"
 
+#include "NiagaraFunctionLibrary.h"
+#include "Components/AudioComponent.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 
 // Sets default values
 AAuraProjectile::AAuraProjectile()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 	bReplicates = true;
 
@@ -32,12 +35,42 @@ AAuraProjectile::AAuraProjectile()
 void AAuraProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+
+	SetLifeSpan(LifeSpan);
+
 	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AAuraProjectile::OnSphereOverlap);
+
+	LoopingSoundComponent = UGameplayStatics::SpawnSoundAttached(LoopingSound, GetRootComponent());
 }
 
-
-void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AAuraProjectile::Destroyed()
 {
-	
+	if (!bHit && !HasAuthority())
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation());
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation());
+		LoopingSoundComponent->Stop();
+	}
+
+	Super::Destroyed();
 }
 
+
+void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+                                      UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+                                      const FHitResult& SweepResult)
+{
+	UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation());
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation());
+	LoopingSoundComponent->Stop();
+
+	if (HasAuthority())
+	{
+		Destroy();
+	}
+	// 防止客户端还没有击中的effect导弹就被服务器销毁了
+	else
+	{
+		bHit = true;
+	}
+}
