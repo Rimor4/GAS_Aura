@@ -92,6 +92,10 @@ void AAuraPlayerController::SetupInputComponent()
 	UAuraInputComponent* AuraInputComponent = CastChecked<UAuraInputComponent>(InputComponent);
 
 	AuraInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
+	// AuraInputComponent->BindAction(ShiftAction, ETriggerEvent::Started, this, &AAuraPlayerController::ShiftPressed);
+	// AuraInputComponent->BindAction(ShiftAction, ETriggerEvent::Completed, this, &AAuraPlayerController::ShiftReleased);
+
+	// 所有的（DA格式）技能输入都绑定到这三个函数中
 	AuraInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed,
 	                                       &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
@@ -124,28 +128,31 @@ void AAuraPlayerController::AbilityInputTagPressed(const FGameplayTag InputTag)
 
 void AAuraPlayerController::AbilityInputTagReleased(const FGameplayTag InputTag)
 {
-	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB) or bTargeting)
+	// TODO: 走A.
+	
+	// 无论按键，都调Release
+	if (GetASC())
 	{
-		if (GetASC())
+		GetASC()->AbilityInputTagReleased(InputTag);
+	}
+
+	// 鼠标左键短按松开（没有瞄准目标时）生成寻路路径
+	if (!bTargeting && InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
+	{
+		if (const APawn* ControlledPawn = GetPawn(); ControlledPawn && FollowTime <= ShortPressThreshold)
 		{
-			GetASC()->AbilityInputTagReleased(InputTag);
+			BuildAutoRunPathToTarget();
 		}
-		return;
-	}
 
-	// 鼠标左键短按松开生成寻路路径
-	if (const APawn* ControlledPawn = GetPawn(); ControlledPawn && FollowTime <= ShortPressThreshold)
-	{
-		BuildAutoRunPathToTarget();
+		FollowTime = 0.f;
 	}
-
-	FollowTime = 0.f;
 }
 
 void AAuraPlayerController::AbilityInputTagHeld(const FGameplayTag InputTag)
 {
 	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB) or bTargeting)
 	{
+		// 非"鼠标左键瞄准敌人"时，触发技能
 		if (GetASC())
 		{
 			GetASC()->AbilityInputTagHeld(InputTag);
@@ -193,21 +200,22 @@ void AAuraPlayerController::Move(const FInputActionValue& InputActionValue)
 void AAuraPlayerController::BuildAutoRunPathToTarget()
 {
 	if (const auto ControlledPawn = GetPawn<APawn>(); !ControlledPawn) return;
-	
+
 	const FVector PawnLocation = GetPawn()->GetActorLocation();
 	// 尝试将点击位置投影到导航网格
 	FNavLocation ProjectedLocation;
 	UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
-	bool bIsOnNavMesh = NavSys->ProjectPointToNavigation(CachedDestination, ProjectedLocation, FVector::ZeroVector, static_cast<const FNavAgentProperties*>(nullptr));
-	
+	bool bIsOnNavMesh = NavSys->ProjectPointToNavigation(CachedDestination, ProjectedLocation, FVector::ZeroVector,
+	                                                     static_cast<const FNavAgentProperties*>(nullptr));
+
 	if (!bIsOnNavMesh)
 	{
 		// 如果不在导航网格上，尝试选取网格上离目标位置最近的点
 		// todo：这里假设都在一个平面
 		const FVector FootLocation = FVector(PawnLocation.X, PawnLocation.Y, CachedDestination.Z);
-		
+
 		// 从脚部位置向目标点寻找阻塞点
-		FVector HitLocation; 
+		FVector HitLocation;
 		if (NavSys->NavigationRaycast(GetWorld(), FootLocation, CachedDestination, HitLocation))
 		{
 			CachedDestination = HitLocation;
@@ -220,7 +228,8 @@ void AAuraPlayerController::BuildAutoRunPathToTarget()
 	}
 
 	// 使用修正后的目标点进行路径查找
-	if (UNavigationPath* NavPath = UNavigationSystemV1::FindPathToLocationSynchronously(this, PawnLocation, CachedDestination))
+	if (UNavigationPath* NavPath = UNavigationSystemV1::FindPathToLocationSynchronously(
+		this, PawnLocation, CachedDestination))
 	{
 		Spline->ClearSplinePoints();
 		for (const FVector& PointLoc : NavPath->PathPoints)
@@ -237,16 +246,17 @@ void AAuraPlayerController::BuildAutoRunPathToTarget()
 void AAuraPlayerController::AutoRun()
 {
 	if (!bAutoRunning) return;
-	
+
 	if (APawn* ControllerPawn = GetPawn())
 	{
 		const FVector LocationOnSpline = Spline->FindLocationClosestToWorldLocation(ControllerPawn->GetActorLocation(),
 			ESplineCoordinateSpace::World);
-		const FVector Direction = Spline->FindDirectionClosestToWorldLocation(ControllerPawn->GetActorLocation(), 
-			ESplineCoordinateSpace::World);
+		const FVector Direction = Spline->FindDirectionClosestToWorldLocation(ControllerPawn->GetActorLocation(),
+		                                                                      ESplineCoordinateSpace::World);
 		ControllerPawn->AddMovementInput(Direction);
-		
-		const float DistanceToDestination = (FVector2D(LocationOnSpline.X, LocationOnSpline.Y) - FVector2D(CachedDestination.X, CachedDestination.Y)).Length();
+
+		const float DistanceToDestination = (FVector2D(LocationOnSpline.X, LocationOnSpline.Y) - FVector2D(
+			CachedDestination.X, CachedDestination.Y)).Length();
 		if (DistanceToDestination <= AutoRunAcceptanceRadius)
 		{
 			bAutoRunning = false;

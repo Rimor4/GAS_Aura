@@ -18,14 +18,11 @@ public:
 
 	static void InitializeNativeGameplayTags();
 
-	#pragma region Primary Attributes
 	FGameplayTag Attributes_Primary_Strength;
 	FGameplayTag Attributes_Primary_Intelligence;
 	FGameplayTag Attributes_Primary_Resilience;
 	FGameplayTag Attributes_Primary_Vigor;
-	#pragma endregion
 
-	#pragma region Secondary Attributes
 	FGameplayTag Attributes_Secondary_MaxHealth;
 	FGameplayTag Attributes_Secondary_MaxMana;
 	FGameplayTag Attributes_Secondary_Armor;
@@ -35,7 +32,6 @@ public:
 	FGameplayTag Attributes_Secondary_CritDamageMultiplier;
 	FGameplayTag Attributes_Secondary_HealthRegen;
 	FGameplayTag Attributes_Secondary_ManaRegen;
-	#pragma endregion
 
 	FGameplayTag InputTag_LMB;
 	FGameplayTag InputTag_RMB;
@@ -43,6 +39,7 @@ public:
 	FGameplayTag InputTag_2;
 	FGameplayTag InputTag_3;
 	FGameplayTag InputTag_4;
+	FGameplayTag InputTag_SHIFT;
 	
 private:
 	static FAuraGameplayTags GameplayTags;

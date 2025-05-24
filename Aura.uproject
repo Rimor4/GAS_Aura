@@ -41,6 +41,10 @@
 		{
 			"Name": "EditorUIScaleCustomization",
 			"Enabled": true
+		},
+		{
+			"Name": "MotionWarping",
+			"Enabled": true
 		}
 	]
 }

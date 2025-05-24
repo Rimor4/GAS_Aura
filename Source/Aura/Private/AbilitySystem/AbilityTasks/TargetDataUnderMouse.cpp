@@ -17,11 +17,21 @@ void UTargetDataUnderMouse::Activate()
 	const bool bIsLocallyControlled = Ability->GetCurrentActorInfo()->IsLocallyControlled();
 	if (bIsLocallyControlled)
 	{
+		/*
+		 * Activated on Client
+		 */
 		SendMouseCursorData();
 	}
 	else
 	{
-		// ε 服务器收到了客户端通过调用 CallServerTryActivateAbility 的 RPC - 在服务器上激活同样地Ability(Task)
+		/*
+		 * Activated on Server
+		 * 
+		 * Note: 对于 1.& 2. 事实上，由于ServerSetReplicatedTargetData和 CallServerTryActivateAbility都是 reliable 的，
+		 * 所以Server端调用顺序始终为 先进入这段代码->再收到TD
+		 */
+		
+		// 2. ε 服务器收到了客户端通过调用 CallServerTryActivateAbility 的 RPC - 在服务器上激活同样地Ability(Task)
 		const FGameplayAbilitySpecHandle SpecHandle = GetAbilitySpecHandle();
 		const FPredictionKey ActivationPredictionKey = GetActivationPredictionKey();
 
@@ -34,6 +44,7 @@ void UTargetDataUnderMouse::Activate()
 		if (!bCallDelegate)
 		{
 			// 等客户端发的TD到达[δ]后再Broadcast
+			// 真正的Broadcast发生在 ServerSetReplicatedTargetData_Implementation中，这里只是做了客户端ForceCancel时的处理
 			SetWaitingOnRemotePlayerData();
 		}
 	}
@@ -52,7 +63,7 @@ void UTargetDataUnderMouse::SendMouseCursorData() const
 	Data->HitResult = CursorHit;
 	DataHandle.Add(Data);
 
-	// 客户端给服务器发送TD，服务器需 δ 时间接受，并调用 ServerSetReplicatedTargetData_Implementation
+	// 1. 客户端给服务器发送TD，服务器需 δ 时间接受，并调用 ServerSetReplicatedTargetData_Implementation
 	AbilitySystemComponent->ServerSetReplicatedTargetData(
 		GetAbilitySpecHandle(),
 		GetActivationPredictionKey(),
