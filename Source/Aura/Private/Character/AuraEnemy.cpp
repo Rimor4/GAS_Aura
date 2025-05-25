@@ -4,7 +4,6 @@
 #include "Character/AuraEnemy.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "AbilitySystem/AuraAttributeSet.h"
-#include "Aura/Aura.h"
 
 AAuraEnemy::AAuraEnemy()
 {
@@ -20,12 +19,16 @@ AAuraEnemy::AAuraEnemy()
 void AAuraEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	InitAbilityActorInfo();
 }
 
 void AAuraEnemy::InitAbilityActorInfo()
 {
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	Cast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->OnAbilityActorInfoSet();
+
+	InitializeDefaultAttributes();
 }
 
 void AAuraEnemy::HighlightActor()
