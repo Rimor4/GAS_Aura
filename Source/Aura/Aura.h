@@ -15,4 +15,6 @@ using TStaticFuncPtr = typename TBaseStaticDelegateInstance<T, FDefaultDelegateU
 
 #pragma region Const
 
+#define ECC_Projectile ECollisionChannel::ECC_GameTraceChannel1
+
 #pragma endregion

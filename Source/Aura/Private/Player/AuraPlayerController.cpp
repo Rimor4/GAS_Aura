@@ -31,6 +31,9 @@ AAuraPlayerController::AAuraPlayerController()
 void AAuraPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (!IsLocalController()) return;
+	
 	check(AuraContext);
 
 	// 通过EnhancedInputLocalPlayerSubsystem应用映射上下文
