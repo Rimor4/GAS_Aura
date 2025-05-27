@@ -57,4 +57,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.InputTag_SHIFT = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("InputTag.SHIFT"), FString("Input Tag SHIFT"));
 #pragma endregion
+
+	GameplayTags.Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Damage"), FString("Damage Tag"));
 }
