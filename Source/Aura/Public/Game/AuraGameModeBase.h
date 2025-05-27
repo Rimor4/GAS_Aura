@@ -6,6 +6,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "AuraGameModeBase.generated.h"
 
+class UCharacterClassInfo;
 /**
  * 
  */
@@ -17,6 +18,9 @@ class AURA_API AAuraGameModeBase : public AGameModeBase
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Game, meta = (DisplayName = "Top Down"))
 	bool bIsTopDown = true;
+
+	UPROPERTY(EditDefaultsOnly, Category="Character Class Defaults")
+	TObjectPtr<UCharacterClassInfo> CharacterClassInfo;
 
 protected:
 	virtual void StartPlay() override;

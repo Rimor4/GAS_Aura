@@ -110,6 +110,7 @@ void AAuraPlayerController::SetupInputComponent()
 	                                       &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
 
+// TODO: 重构TopDown切换
 void AAuraPlayerController::IsTopDownChanged(const bool bNewIsTopDown)
 {
 	if (bNewIsTopDown == bIsTopDown) return;
