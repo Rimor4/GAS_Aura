@@ -44,6 +44,14 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnAttributeChangedSignature OnMaxHealthChanged;
 	
+	void HitReactTagChanged(const FGameplayTag Tag, int32 NewCount);
+
+	UPROPERTY(BlueprintReadOnly, Category = "Combat")
+	bool bHitReacting;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Combat")
+	float BaseWalkSpeed = 250.f;
+	
 protected:
 	virtual void BeginPlay() override;
 
@@ -52,6 +60,8 @@ protected:
 	virtual void InitializeDefaultAttributes() const override;
 
 	virtual void BindAttributesCallbacks();
+
+	virtual void BindTagsCallbacks();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
 	int32 Level = 1;
