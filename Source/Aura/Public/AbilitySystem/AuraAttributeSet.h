@@ -214,5 +214,5 @@ public:
 	void OnRep_ManaRegen(const FGameplayAttributeData& OldManaRegen) const;
 	
 private:
-	void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;
+	static void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props);
 };

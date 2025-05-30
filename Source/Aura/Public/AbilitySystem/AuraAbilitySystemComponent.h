@@ -22,6 +22,7 @@ public:
 	// The delegate to broadcast the asset tags of the applied effect
 	FEffectAssetTagsSignature EffectAssetTags;
 
+	/* 给角色（玩家）赋予游戏开始时的技能，包括技能的InputTag */
 	void AddCharacterAbilities(const TArray<TSubclassOf<UGameplayAbility>>& Abilities);
 
 	void AbilityInputTagHeld(const FGameplayTag& InputTag);

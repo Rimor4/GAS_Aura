@@ -25,8 +25,15 @@ public:
 	
 	virtual int32 GetPlayerLevel() override;
 	
-#pragma endregion 
+#pragma endregion
+
+protected:
+	void AddCharacterAbilities() const;
+	
+	UPROPERTY(EditAnywhere, Category = "Abilities")
+	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
 private:
 	virtual void InitAbilityActorInfo() override;
+	
 };

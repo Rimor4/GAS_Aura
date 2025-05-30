@@ -56,3 +56,13 @@ void AAuraCharacter::InitAbilityActorInfo()
 
 	InitializeDefaultAttributes();
 }
+
+void AAuraCharacter::AddCharacterAbilities() const
+{
+	if (!HasAuthority()) return;
+	
+	UAuraAbilitySystemComponent* AuraASC = CastChecked<UAuraAbilitySystemComponent>(AbilitySystemComponent);
+
+	AuraASC->AddCharacterAbilities(StartupAbilities);
+}
+
