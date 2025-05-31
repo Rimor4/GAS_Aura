@@ -35,7 +35,9 @@ public:
 #pragma region Combat Interface
 	
 	virtual int32 GetPlayerLevel() override;
-	
+
+	virtual void Die() override;
+
 #pragma endregion
 
 	UPROPERTY(BlueprintAssignable)
@@ -51,6 +53,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
 	float BaseWalkSpeed = 250.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Combat")
+	float LifeSpanOnDeath = 5.f;
 	
 protected:
 	virtual void BeginPlay() override;

@@ -42,6 +42,9 @@ void AAuraEnemy::BeginPlay()
 	
 	BindAttributesCallbacks();
 	BindTagsCallbacks();
+
+	// Hide the health bar by default
+	HealthBar->SetVisibility(false);
 }
 
 void AAuraEnemy::InitAbilityActorInfo()
@@ -106,4 +109,10 @@ void AAuraEnemy::UnHighlightActor()
 int32 AAuraEnemy::GetPlayerLevel()
 {
 	return Level;
+}
+
+void AAuraEnemy::Die()
+{
+	SetLifeSpan(LifeSpanOnDeath);
+	Super::Die();
 }
