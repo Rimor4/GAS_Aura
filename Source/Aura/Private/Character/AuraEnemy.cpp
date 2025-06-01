@@ -42,9 +42,6 @@ void AAuraEnemy::BeginPlay()
 	
 	BindAttributesCallbacks();
 	BindTagsCallbacks();
-
-	// Hide the health bar by default
-	HealthBar->SetVisibility(false);
 }
 
 void AAuraEnemy::InitAbilityActorInfo()
@@ -62,6 +59,7 @@ void AAuraEnemy::InitializeDefaultAttributes() const
 
 void AAuraEnemy::BindAttributesCallbacks()
 {
+	// TODO: 同步属性血条隐藏
 	if (const UAuraAttributeSet* AS = CastChecked<UAuraAttributeSet>(AttributeSet))
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AS->GetHealthAttribute()).AddLambda(
