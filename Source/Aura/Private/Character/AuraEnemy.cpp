@@ -59,7 +59,6 @@ void AAuraEnemy::InitializeDefaultAttributes() const
 
 void AAuraEnemy::BindAttributesCallbacks()
 {
-	// TODO: 同步属性血条隐藏
 	if (const UAuraAttributeSet* AS = CastChecked<UAuraAttributeSet>(AttributeSet))
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AS->GetHealthAttribute()).AddLambda(

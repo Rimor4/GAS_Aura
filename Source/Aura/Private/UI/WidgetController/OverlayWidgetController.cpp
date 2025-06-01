@@ -17,7 +17,7 @@ void UOverlayWidgetController::InitWidget()
 {
 	checkf(!OverlayWidgetClass.IsNull(), TEXT("Overlay Widget Class unassigned, please fill out BP_AuraHUD"));
 
-	// TODO: 统一管理异步加载和延迟显示
+	// todo: 统一管理异步加载和延迟显示
 	FStreamableManager& Streamable = UAssetManager::GetStreamableManager();
 	Streamable.RequestAsyncLoad(OverlayWidgetClass.ToSoftObjectPath(), [this]()
 	{

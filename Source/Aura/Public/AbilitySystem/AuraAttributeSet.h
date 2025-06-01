@@ -100,7 +100,7 @@ public:
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Armor);
 
 	// 护甲穿透（忽略敌人护甲的百分比），可提高暴击率
-	// TODO: 把暴击率和暴击伤害变为Primary Attributes
+	// todo: 把暴击率和暴击伤害变为Primary Attributes
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPenetration, Category = "Secondary Attributes")
 	FGameplayAttributeData ArmorPenetration;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, ArmorPenetration);
@@ -140,7 +140,7 @@ public:
 	FGameplayAttributeData MaxMana;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, MaxMana);
 
-	// TODO: 是否增加敏捷+闪避属性
+	// todo: 是否增加敏捷+闪避属性
 
 #pragma endregion
 
