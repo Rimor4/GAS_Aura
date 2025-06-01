@@ -135,6 +135,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +171,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -29384,15 +29389,7 @@
       <workItem from="1748265295242" duration="14398000" />
       <workItem from="1748523960885" duration="7759000" />
       <workItem from="1748603715143" duration="22534000" />
-      <workItem from="1748742571795" duration="26203000" />
-    </task>
-    <task id="LOCAL-00002" summary="Activating Abilities">
-      <option name="closed" value="true" />
-      <created>1747476360568</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1747476360568</updated>
+      <workItem from="1748742571795" duration="28249000" />
     </task>
     <task id="LOCAL-00003" summary="Setting Up Auto Running">
       <option name="closed" value="true" />
@@ -29778,7 +29775,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748774972111</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Damage Execution Calculation">
+      <option name="closed" value="true" />
+      <created>1748780632916</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1748780632917</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29826,7 +29831,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Custom Ability Tasks" />
     <MESSAGE value="Send Mouse Cursor Data" />
     <MESSAGE value="Receiving Target Data" />
     <MESSAGE value="Orienting the Projectile" />
@@ -29851,7 +29855,8 @@
     <MESSAGE value="Floating Text Widget" />
     <MESSAGE value="修复Client初始化敌人时血条没有隐藏问题" />
     <MESSAGE value="Showing Damage Text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Showing Damage Text" />
+    <MESSAGE value="Damage Execution Calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Damage Execution Calculation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
