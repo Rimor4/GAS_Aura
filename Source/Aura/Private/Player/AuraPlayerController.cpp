@@ -318,6 +318,7 @@ void AAuraPlayerController::InitHUD(APlayerState* AuraPlayerState, UAbilitySyste
 
 #pragma endregion
 
+
 UAuraAbilitySystemComponent* AAuraPlayerController::GetASC()
 {
 	if (AuraAbilitySystemComponent == nullptr)

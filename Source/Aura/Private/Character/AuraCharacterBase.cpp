@@ -3,9 +3,9 @@
 
 #include "Character/AuraCharacterBase.h"
 #include "AbilitySystemComponent.h"
-#include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "Aura/Aura.h"
 #include "Components/CapsuleComponent.h"
+#include "UI/Widget/DamageTextComponent.h"
 
 AAuraCharacterBase::AAuraCharacterBase()
 {
@@ -73,6 +73,18 @@ void AAuraCharacterBase::MulticastHandleDeath_Implementation()
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	Dissolve();
+}
+
+void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount)
+{
+	if (DamageTextComponentClass)
+	{
+		UDamageTextComponent* DamageText = NewObject<UDamageTextComponent>(this, DamageTextComponentClass);
+		DamageText->RegisterComponent();
+		DamageText->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+		DamageText->SetDamageText(DamageAmount);
+	}
 }
 
 void AAuraCharacterBase::Dissolve()

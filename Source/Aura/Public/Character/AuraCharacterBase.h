@@ -8,6 +8,8 @@
 #include "Interaction/CombatInterface.h"
 #include "AuraCharacterBase.generated.h"
 
+class UDamageTextComponent;
+struct FEffectProperties;
 class UGameplayAbility;
 class UGameplayEffect;
 class UAbilitySystemComponent;
@@ -31,6 +33,9 @@ public:
 
 	UFUNCTION(NetMulticast, Reliable)
 	virtual void MulticastHandleDeath();
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastShowDamageNumber(float DamageAmount);
 
 protected:
 	virtual void BeginPlay() override;
@@ -78,6 +83,9 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UMaterialInstance> WeaponDissloveMaterialInstance;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
