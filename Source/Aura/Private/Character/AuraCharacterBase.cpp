@@ -79,7 +79,7 @@ void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float Da
 {
 	if (DamageTextComponentClass)
 	{
-		UDamageTextComponent* DamageText = NewObject<UDamageTextComponent>(this, DamageTextComponentClass);
+		UDamageTextComponent* DamageText = NewObject<UDamageTextComponent>(this, DamageTextComponentClass, NAME_None, RF_Transient);
 		DamageText->RegisterComponent();
 		DamageText->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);

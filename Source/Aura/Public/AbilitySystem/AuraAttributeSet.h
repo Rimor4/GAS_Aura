@@ -69,7 +69,7 @@ public:
 
 #pragma region Primary Attributes
 
-	// 力量，提高物理伤害和暴击伤害
+	// 力量，提高物理伤害和暴击率和暴击伤害
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Strength, Category = "Primary Attributes")
 	FGameplayAttributeData Strength;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Strength);
@@ -79,7 +79,7 @@ public:
 	FGameplayAttributeData Intelligence;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Intelligence);
 
-	// 坚韧，提高护甲和护甲穿透
+	// 坚韧，提高护甲和护甲穿透和格挡率
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Resilience, Category = "Primary Attributes")
 	FGameplayAttributeData Resilience;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Resilience);
@@ -94,12 +94,12 @@ public:
 
 #pragma region Secondary Attributes
 
-	// 护甲（减少受到的伤害），可提高格挡率
+	// 护甲（减少受到的伤害）
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Armor, Category = "Secondary Attributes")
 	FGameplayAttributeData Armor;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Armor);
 
-	// 护甲穿透（忽略敌人护甲的百分比），可提高暴击率
+	// 护甲穿透（忽略敌人护甲的百分比）
 	// todo: 把暴击率和暴击伤害变为Primary Attributes
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPenetration, Category = "Secondary Attributes")
 	FGameplayAttributeData ArmorPenetration;

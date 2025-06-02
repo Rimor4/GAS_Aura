@@ -19,19 +19,28 @@ void UOverlayWidgetController::InitWidget()
 
 	// todo: 统一管理异步加载和延迟显示
 	FStreamableManager& Streamable = UAssetManager::GetStreamableManager();
-	Streamable.RequestAsyncLoad(OverlayWidgetClass.ToSoftObjectPath(), [this]()
+	TWeakObjectPtr WeakThis(this);
+	Streamable.RequestAsyncLoad(OverlayWidgetClass.ToSoftObjectPath(), [WeakThis]()
 	{
-		if (UClass* LoadedClass = OverlayWidgetClass.Get())
+		if (!WeakThis.IsValid()) return;
+
+		UOverlayWidgetController* This = WeakThis.Get();
+		if (UClass* LoadedClass = This->OverlayWidgetClass.Get())
 		{
-			OverlayWidget = CreateWidget<UAuraUserWidget>(GetWorld(), LoadedClass);
-			if (OverlayWidget)
+			UWorld* World = This->GetWorld();
+			if (!IsValid(World)) return;
+			
+			This->OverlayWidget = CreateWidget<UAuraUserWidget>(World, LoadedClass);
+			if (This->OverlayWidget)
 			{
-				OverlayWidget->SetWidgetController(this);
-				this->BroadcastInitialValues();
+				This->OverlayWidget->SetWidgetController(This);
+				This->BroadcastInitialValues();
 				
-				GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
+				World->GetTimerManager().SetTimerForNextTick([WeakThis]()
 				{
-					OverlayWidget->AddToViewport();
+					if (!WeakThis.IsValid()) return;
+					
+					WeakThis.Get()->OverlayWidget->AddToViewport();
 				});
 			}
 		}
