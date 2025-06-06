@@ -15,12 +15,16 @@ struct AuraDamageStatics
 	DECLARE_ATTRIBUTE_CAPTUREDEF(Armor);
 	DECLARE_ATTRIBUTE_CAPTUREDEF(BlockChance);
 	DECLARE_ATTRIBUTE_CAPTUREDEF(ArmorPenetration);
+	DECLARE_ATTRIBUTE_CAPTUREDEF(CritChance);
+	DECLARE_ATTRIBUTE_CAPTUREDEF(CritDamageMultiplier);
 	
 	AuraDamageStatics()
 	{
 		DEFINE_ATTRIBUTE_CAPTUREDEF(UAuraAttributeSet, Armor, Target, false);
 		DEFINE_ATTRIBUTE_CAPTUREDEF(UAuraAttributeSet, BlockChance, Target, false);
 		DEFINE_ATTRIBUTE_CAPTUREDEF(UAuraAttributeSet, ArmorPenetration, Source, false);
+		DEFINE_ATTRIBUTE_CAPTUREDEF(UAuraAttributeSet, CritChance, Source, false);
+		DEFINE_ATTRIBUTE_CAPTUREDEF(UAuraAttributeSet, CritDamageMultiplier, Source, false);
 	}
 };
 
@@ -35,6 +39,8 @@ UExecCalc_Damage::UExecCalc_Damage()
 	RelevantAttributesToCapture.Add(DamageStatics().ArmorDef);
 	RelevantAttributesToCapture.Add(DamageStatics().BlockChanceDef);
 	RelevantAttributesToCapture.Add(DamageStatics().ArmorPenetrationDef);
+	RelevantAttributesToCapture.Add(DamageStatics().CritChanceDef);
+	RelevantAttributesToCapture.Add(DamageStatics().CritDamageMultiplierDef);
 }
 
 void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
@@ -88,6 +94,18 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 
 	// Armor ignores a percentage of incoming Damage
 	Damage *= (100 - EffectiveArmor * EffectiveArmorCoefficient) / 100.f;
+
+	float SourceCritChance = 0.f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().CritChanceDef, EvaluationParams, SourceCritChance);
+	SourceCritChance = FMath::Max<float>(SourceCritChance, 0.f);
+	
+	float SourceCritDamageMultiplier = 0.f;
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().CritDamageMultiplierDef, EvaluationParams, SourceCritDamageMultiplier);
+	SourceCritDamageMultiplier = FMath::Max<float>(SourceCritDamageMultiplier, 0.f);
+
+	Damage = FMath::RandRange(1, 100) < SourceCritChance
+		? Damage * (1 + SourceCritDamageMultiplier / 100.f)
+		: Damage;
 	
 	const FGameplayModifierEvaluatedData EvaluatedData(UAuraAttributeSet::GetIncomingDamageAttribute(), EGameplayModOp::Additive, Damage);
 	OutExecutionOutput.AddOutputModifier(EvaluatedData);

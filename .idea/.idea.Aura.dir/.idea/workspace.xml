@@ -133,16 +133,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="Damage Calculation Coefficients">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/Data/DA_CharacterClassInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AbilitySystem/Data/DA_CharacterClassInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/Data/CharacterClassInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/Data/CharacterClassInfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actor/GE_TestEffect.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actor/GE_TestEffect.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffect.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffectAggregator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffectAggregator.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +157,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../UnrealEngine-release" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -179,16 +173,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt/tchar.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Visual Studio/VC/Tools/MSVC/14.44.35207/include/xatomic.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraPlayerController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/DamageTextComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/OverlayWidgetController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Actor/AuraProjectile.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Input/AuraInputConfig.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -196,8 +185,7 @@
     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/Input/AuraInputConfig.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/UnrealEditor/Inc/GameplayAbilities/UHT/AbilitySystemComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/UnrealEditor/Inc/GameplayAbilities/UHT/AbilityTask_PlayMontageAndWait.gen.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffect.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UE/UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffectAggregator.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/x64/UnrealEditor/Development/GameplayAbilities/Module.GameplayAbilities.3.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/UE-EditorUIScaleCustomization-main/EditorUIScaleCustomization/Source/EditorUIScaleCustomization/EditorUIScaleCustomization.Build.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/Runtime/Navmesh/Private/Detour/DetourNavMeshQuery.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/Runtime/Navmesh/Public/Detour/DetourNavMeshQuery.h" root0="SKIP_HIGHLIGHTING" />
@@ -218,17 +206,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Uproject.Aura.executor&quot;: &quot;Debug&quot;,
-    &quot;ezargs.lastUsed&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;start&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Uproject.Aura.executor": "Debug",
+    "ezargs.lastUsed": "",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="start" />
@@ -29201,23 +29189,8 @@
       <workItem from="1748603715143" duration="22534000" />
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
-      <workItem from="1749220976323" duration="1829000" />
-    </task>
-    <task id="LOCAL-00006" summary="优化：实现点击阻挡物时尝试寻找最近的导航网格点来寻路">
-      <option name="closed" value="true" />
-      <created>1747672192930</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1747672192930</updated>
-    </task>
-    <task id="LOCAL-00007" summary="增加EditorUIScaleCustomization插件；删除Blackmagicxx插件">
-      <option name="closed" value="true" />
-      <created>1747672250769</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1747672250769</updated>
+      <workItem from="1749220976323" duration="7867000" />
+      <workItem from="1749377808053" duration="5066000" />
     </task>
     <task id="LOCAL-00008" summary="Aura Projectile">
       <option name="closed" value="true" />
@@ -29595,7 +29568,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748837808414</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Damage Calculation Coefficients">
+      <option name="closed" value="true" />
+      <created>1749222857228</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1749222857228</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Implementing Critical Hits">
+      <option name="closed" value="true" />
+      <created>1749224954281</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1749224954281</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29643,8 +29632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="初步实现两种交互模式(TopDown/Over-Shoulder)切换逻辑" />
-    <MESSAGE value="Motion Warping" />
     <MESSAGE value="Projectile Impact" />
     <MESSAGE value="Projectile Collision Channel" />
     <MESSAGE value="Projectile Gameplay Effect" />
@@ -29668,7 +29655,9 @@
     <MESSAGE value="ExecCalcs - Capturing Attributes" />
     <MESSAGE value="Implementing Block Chance" />
     <MESSAGE value="Implementing Armor and Armor Penetration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Armor and Armor Penetration" />
+    <MESSAGE value="Damage Calculation Coefficients" />
+    <MESSAGE value="Implementing Critical Hits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Critical Hits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -29702,6 +29691,7 @@
       <configuration name="Uproject">
         <watch expression="this-&gt;Role" language="C++" />
         <watch expression="TargetASC-&gt;SpawnedAttributes[0]" language="C++" />
+        <watch expression="SourceASC-&gt;SpawnedAttributes[0]" language="C++" />
       </configuration>
     </watches-manager>
   </component>
