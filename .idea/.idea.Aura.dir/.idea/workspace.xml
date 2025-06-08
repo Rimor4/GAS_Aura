@@ -135,8 +135,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actor/GE_TestEffect.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actor/GE_TestEffect.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffect.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../UnrealEngine-release" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -175,6 +174,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt/tchar.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Visual Studio/VC/Tools/MSVC/14.44.35207/include/xatomic.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraPlayerController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/DamageTextComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/OverlayWidgetController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -186,6 +186,7 @@
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/UnrealEditor/Inc/GameplayAbilities/UHT/AbilitySystemComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/UnrealEditor/Inc/GameplayAbilities/UHT/AbilityTask_PlayMontageAndWait.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/x64/UnrealEditor/Development/GameplayAbilities/Module.GameplayAbilities.3.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/UE/UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Private/GameplayEffect.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/UE-EditorUIScaleCustomization-main/EditorUIScaleCustomization/Source/EditorUIScaleCustomization/EditorUIScaleCustomization.Build.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/Runtime/Navmesh/Private/Detour/DetourNavMeshQuery.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/Runtime/Navmesh/Public/Detour/DetourNavMeshQuery.h" root0="SKIP_HIGHLIGHTING" />
@@ -213,7 +214,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "Uproject.Aura.executor": "Debug",
     "ezargs.lastUsed": "",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "start",
     "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
@@ -29190,15 +29191,7 @@
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
       <workItem from="1749220976323" duration="7867000" />
-      <workItem from="1749377808053" duration="5066000" />
-    </task>
-    <task id="LOCAL-00008" summary="Aura Projectile">
-      <option name="closed" value="true" />
-      <created>1747751145054</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1747751145054</updated>
+      <workItem from="1749377808053" duration="7802000" />
     </task>
     <task id="LOCAL-00009" summary="优化点击阻挡物时找点算法逻辑">
       <option name="closed" value="true" />
@@ -29584,7 +29577,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749224954281</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Implementing Critical Hits&#10;Damage Calculation Coefficients">
+      <option name="closed" value="true" />
+      <created>1749392981273</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1749392981273</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29632,7 +29633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Projectile Impact" />
     <MESSAGE value="Projectile Collision Channel" />
     <MESSAGE value="Projectile Gameplay Effect" />
     <MESSAGE value="Enemy Health Bar" />
@@ -29657,7 +29657,8 @@
     <MESSAGE value="Implementing Armor and Armor Penetration" />
     <MESSAGE value="Damage Calculation Coefficients" />
     <MESSAGE value="Implementing Critical Hits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Critical Hits" />
+    <MESSAGE value="Implementing Critical Hits&#10;Damage Calculation Coefficients" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Critical Hits&#10;Damage Calculation Coefficients" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
