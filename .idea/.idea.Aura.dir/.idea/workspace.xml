@@ -134,8 +134,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AuraAbilityTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AuraAbilityTypes.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +201,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2x8N4bwGzxgq5xuXKcvniwsrDYv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29191,23 +29193,7 @@
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
       <workItem from="1749220976323" duration="7867000" />
-      <workItem from="1749377808053" duration="7802000" />
-    </task>
-    <task id="LOCAL-00009" summary="优化点击阻挡物时找点算法逻辑">
-      <option name="closed" value="true" />
-      <created>1747753425281</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1747753425281</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Aura Projectile Spell">
-      <option name="closed" value="true" />
-      <created>1747755506096</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1747755506096</updated>
+      <workItem from="1749377808053" duration="8915000" />
     </task>
     <task id="LOCAL-00011" summary="Spawning Projectiles">
       <option name="closed" value="true" />
@@ -29585,7 +29571,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749392981273</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="The Gameplay Effect Context">
+      <option name="closed" value="true" />
+      <created>1749395655768</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1749395655768</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Custom Gameplay Effect Context">
+      <option name="closed" value="true" />
+      <created>1749396370100</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1749396370100</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29633,8 +29635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Projectile Collision Channel" />
-    <MESSAGE value="Projectile Gameplay Effect" />
     <MESSAGE value="Enemy Health Bar" />
     <MESSAGE value="Ghost Bar" />
     <MESSAGE value="Character Class Info" />
@@ -29658,7 +29658,9 @@
     <MESSAGE value="Damage Calculation Coefficients" />
     <MESSAGE value="Implementing Critical Hits" />
     <MESSAGE value="Implementing Critical Hits&#10;Damage Calculation Coefficients" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Critical Hits&#10;Damage Calculation Coefficients" />
+    <MESSAGE value="The Gameplay Effect Context" />
+    <MESSAGE value="Custom Gameplay Effect Context" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Gameplay Effect Context" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
