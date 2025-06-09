@@ -117,8 +117,10 @@ bool UAuraAbilitySystemLibrary::IsCriticalHit(const FGameplayEffectContextHandle
 
 bool UAuraAbilitySystemLibrary::SetIsBlockedHit(FGameplayEffectContextHandle& EffectContextHandle, bool bInIsBlockedHit)
 {
-	if (FAuraGameplayEffectContext* AuraEffectContext = static_cast<FAuraGameplayEffectContext*>(EffectContextHandle.Get()))
+	FGameplayEffectContext* EffectContext = EffectContextHandle.Get();
+	if (EffectContext->GetScriptStruct()->IsChildOf(FAuraGameplayEffectContext::StaticStruct()))
 	{
+		FAuraGameplayEffectContext* AuraEffectContext = static_cast<FAuraGameplayEffectContext*>(EffectContext);
 		AuraEffectContext->SetIsBlockedHit(bInIsBlockedHit);
 		return true;
 	}
@@ -127,8 +129,10 @@ bool UAuraAbilitySystemLibrary::SetIsBlockedHit(FGameplayEffectContextHandle& Ef
 
 bool UAuraAbilitySystemLibrary::SetIsCriticalHit(FGameplayEffectContextHandle& EffectContextHandle, bool bInIsCriticalHit)
 {
-	if (FAuraGameplayEffectContext* AuraEffectContext = static_cast<FAuraGameplayEffectContext*>(EffectContextHandle.Get()))
+	FGameplayEffectContext* EffectContext = EffectContextHandle.Get();
+	if (EffectContext->GetScriptStruct()->IsChildOf(FAuraGameplayEffectContext::StaticStruct()))
 	{
+		FAuraGameplayEffectContext* AuraEffectContext = static_cast<FAuraGameplayEffectContext*>(EffectContext);
 		AuraEffectContext->SetIsCriticalHit(bInIsCriticalHit);
 		return true;
 	}

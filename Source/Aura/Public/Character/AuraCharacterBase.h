@@ -35,7 +35,7 @@ public:
 	virtual void MulticastHandleDeath();
 
 	UFUNCTION(NetMulticast, Reliable)
-	void MulticastShowDamageNumber(float DamageAmount);
+	void MulticastShowDamageNumber(float DamageAmount, bool bBlockedHit, bool bCriticalHit);
 
 protected:
 	virtual void BeginPlay() override;

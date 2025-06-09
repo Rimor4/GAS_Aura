@@ -1,0 +1,379 @@
+Index: Source/Aura/Public/UI/Widget/DamageTextComponent.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n#pragma once\r\n\r\n#include \"CoreMinimal.h\"\r\n#include \"Components/WidgetComponent.h\"\r\n#include \"DamageTextComponent.generated.h\"\r\n\r\n/**\r\n * \r\n */\r\nUCLASS()\r\nclass AURA_API UDamageTextComponent : public UWidgetComponent\r\n{\r\n\tGENERATED_BODY()\r\n\r\npublic:\r\n\tUFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\r\n\tvoid SetDamageText(float Damage);\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Public/UI/Widget/DamageTextComponent.h b/Source/Aura/Public/UI/Widget/DamageTextComponent.h
+--- a/Source/Aura/Public/UI/Widget/DamageTextComponent.h	(revision a09e8e29e48143f9a54436e88426261279506770)
++++ b/Source/Aura/Public/UI/Widget/DamageTextComponent.h	(date 1749452578835)
+@@ -16,5 +16,5 @@
+ 
+ public:
+ 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+-	void SetDamageText(float Damage);
++	void SetDamageText(float Damage, bool bBlockedHit, bool bCriticalHit);
+ };
+Index: Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n\r\n#include \"AbilitySystem/AuraAttributeSet.h\"\r\n\r\n#include \"AbilitySystemBlueprintLibrary.h\"\r\n#include \"AuraGameplayTags.h\"\r\n#include \"GameplayEffectExtension.h\"\r\n#include \"AbilitySystem/AuraAbilitySystemLibrary.h\"\r\n#include \"Character/AuraCharacterBase.h\"\r\n#include \"GameFramework/Character.h\"\r\n#include \"Interaction/CombatInterface.h\"\r\n#include \"Net/UnrealNetwork.h\"\r\n\r\nUAuraAttributeSet::UAuraAttributeSet()\r\n{\r\n\tconst FAuraGameplayTags& GameplayTags = FAuraGameplayTags::Get();\r\n\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Primary_Strength, GetStrengthAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Primary_Intelligence, GetIntelligenceAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Primary_Resilience, GetResilienceAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Primary_Vigor, GetVigorAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_Armor, GetArmorAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_ArmorPenetration, GetArmorPenetrationAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_BlockChance, GetBlockChanceAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_CritChance, GetCritChanceAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_CritDamageMultiplier, GetCritDamageMultiplierAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_HealthRegen, GetHealthRegenAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_ManaRegen, GetManaRegenAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);\r\n\tTagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxMana, GetMaxManaAttribute);\r\n}\r\n\r\nvoid UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const\r\n{\r\n\tSuper::GetLifetimeReplicatedProps(OutLifetimeProps);\r\n\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Strength, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Intelligence, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Resilience, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Vigor, COND_None, REPNOTIFY_Always);\r\n\t\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Armor, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, ArmorPenetration, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, BlockChance, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, CritChance, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, CritDamageMultiplier, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, HealthRegen, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, ManaRegen, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Mana, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, MaxMana, COND_None, REPNOTIFY_Always);\r\n\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, Health, COND_None, REPNOTIFY_Always);\r\n\tDOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);\r\n}\r\n\r\nvoid UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)\r\n{\r\n\tSuper::PreAttributeChange(Attribute, NewValue);\r\n\r\n\tif (Attribute == GetHealthAttribute())\r\n\t{\r\n\t\tNewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxHealth());\r\n\t}\r\n\tif (Attribute == GetMaxHealthAttribute())\r\n\t{\r\n\t\tNewValue = FMath::Max<float>(NewValue, 0.f);\r\n\t}\r\n\tif (Attribute == GetManaAttribute())\r\n\t{\r\n\t\tNewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxMana());\r\n\t}\r\n\tif (Attribute == GetMaxManaAttribute())\r\n\t{\r\n\t\tNewValue = FMath::Max<float>(NewValue, 0.f);\r\n\t}\r\n}\r\n\r\nvoid UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)\r\n{\r\n\tSuper::PostGameplayEffectExecute(Data);\r\n\r\n\tFEffectProperties Props;\r\n\tSetEffectProperties(Data, Props);\r\n\r\n\tif (Data.EvaluatedData.Attribute == GetHealthAttribute())\r\n\t{\r\n\t\tSetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));\r\n#if WITH_EDITOR\r\n\t\t// UE_LOG(LogTemp, Warning, TEXT(\"Change Health on %s, Health %f\"), *Props.TargetAvatarActor->GetName(), GetHealth());\r\n#endif\r\n\t}\r\n\tif (Data.EvaluatedData.Attribute == GetManaAttribute())\r\n\t{\r\n\t\tSetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));\r\n\t}\r\n\tif (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())\r\n\t{\r\n\t\tconst float LocalIncomingDamage = GetIncomingDamage();\r\n\t\tSetIncomingDamage(0.f);\r\n\t\tif (LocalIncomingDamage > 0.f)\r\n\t\t{\r\n\t\t\tconst float NewHealth = GetHealth() - LocalIncomingDamage;\r\n\t\t\tSetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));\r\n\r\n\t\t\tif (const bool bFatal = NewHealth <= 0.f)\r\n\t\t\t{\r\n\t\t\t\tICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);\r\n\t\t\t\tif (CombatInterface)\r\n\t\t\t\t{\r\n\t\t\t\t\tCombatInterface->Die();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tFGameplayTagContainer TagContainer;\r\n\t\t\t\tTagContainer.AddTag(FAuraGameplayTags::Get().Effects_HitReact);\r\n\t\t\t\tProps.TargetASC->TryActivateAbilitiesByTag(TagContainer);\r\n\t\t\t}\r\n\r\n\t\t\tconst bool bBlock = UAuraAbilitySystemLibrary::IsBlockedHit(Props.EffectContextHandle);\r\n\t\t\tconst bool bCritical = UAuraAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);\r\n\t\t\tShowFloatingText(Props, LocalIncomingDamage, bBlock, bCritical);\r\n\t\t}\r\n\t}\r\n}\r\n\r\nvoid UAuraAttributeSet::ShowFloatingText(const FEffectProperties& Props, const float Damage, bool bBlockedHit, bool bCriticalHit)\r\n{\r\n\tif (Props.SourceCharacter != Props.TargetCharacter)\r\n\t{\r\n\t\tCast<AAuraCharacterBase>(Props.TargetCharacter)->MulticastShowDamageNumber(Damage);\r\n\t}\r\n}\r\n\r\nvoid UAuraAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props)\r\n{\r\n\t// Source = causer of the effect, Target = target of the effect (owner of this AS)\r\n\t\r\n\tProps.EffectContextHandle = Data.EffectSpec.GetContext();\r\n\tProps.SourceASC = Props.EffectContextHandle.GetOriginalInstigatorAbilitySystemComponent();\r\n\tif (IsValid(Props.SourceASC) && Props.SourceASC->AbilityActorInfo.IsValid())\r\n\t{\r\n\t\tProps.SourceAvatarActor = Props.SourceASC->GetAvatarActor();\r\n\t\tProps.SourceController = Props.SourceASC->AbilityActorInfo->PlayerController.Get();\r\n\t\tif (Props.SourceAvatarActor && !Props.SourceController)\r\n\t\t{\r\n\t\t\tif (APawn* Pawn = Cast<APawn>(Props.SourceAvatarActor))\r\n\t\t\t{\r\n\t\t\t\tProps.SourceController = Pawn->GetController();\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (Props.SourceController)\r\n\t\t{\r\n\t\t\tProps.SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());\r\n\t\t}\r\n\t}\r\n\tif (Data.Target.AbilityActorInfo.IsValid())\r\n\t{\r\n\t\tProps.TargetAvatarActor = Data.Target.GetAvatarActor();\r\n\t\tProps.TargetController = Data.Target.AbilityActorInfo->PlayerController.Get();\r\n\t\tProps.TargetCharacter = Cast<ACharacter>(Props.TargetAvatarActor);\r\n\t\tProps.TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(Props.TargetAvatarActor);\r\n\t}\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Health, OldHealth);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Mana(const FGameplayAttributeData& OldMana) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Mana, OldMana);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Strength(const FGameplayAttributeData& OldStrength) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Strength, OldStrength);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Intelligence(const FGameplayAttributeData& OldIntelligence) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Intelligence, OldIntelligence);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Resilience(const FGameplayAttributeData& OldResilience) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Resilience, OldResilience);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Vigor(const FGameplayAttributeData& OldVigor) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Vigor, OldVigor);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_Armor(const FGameplayAttributeData& OldArmor) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, Armor, OldArmor);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_ArmorPenetration(const FGameplayAttributeData& OldArmorPenetration) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, ArmorPenetration, OldArmorPenetration);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_BlockChance(const FGameplayAttributeData& OldBlockChance) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, BlockChance, OldBlockChance);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_CritChance(const FGameplayAttributeData& OldCritChance) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, CritChance, OldCritChance);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_CritDamageMultiplier(const FGameplayAttributeData& OldCritDamageMultiplier) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, CritDamageMultiplier, OldCritDamageMultiplier);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_HealthRegen(const FGameplayAttributeData& OldHealthRegen) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, HealthRegen, OldHealthRegen);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_ManaRegen(const FGameplayAttributeData& OldManaRegen) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, ManaRegen, OldManaRegen);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, MaxHealth, OldMaxHealth);\r\n}\r\n\r\nvoid UAuraAttributeSet::OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const\r\n{\r\n\tGAMEPLAYATTRIBUTE_REPNOTIFY(UAuraAttributeSet, MaxMana, OldMaxMana);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp b/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp
+--- a/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp	(revision a09e8e29e48143f9a54436e88426261279506770)
++++ b/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp	(date 1749452578823)
+@@ -105,8 +105,7 @@
+ 
+ 			if (const bool bFatal = NewHealth <= 0.f)
+ 			{
+-				ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
+-				if (CombatInterface)
++				if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor))
+ 				{
+ 					CombatInterface->Die();
+ 				}
+@@ -129,7 +128,7 @@
+ {
+ 	if (Props.SourceCharacter != Props.TargetCharacter)
+ 	{
+-		Cast<AAuraCharacterBase>(Props.TargetCharacter)->MulticastShowDamageNumber(Damage);
++		Cast<AAuraCharacterBase>(Props.TargetCharacter)->MulticastShowDamageNumber(Damage, bBlockedHit, bCriticalHit);
+ 	}
+ }
+ 
+Index: Source/Aura/Private/Character/AuraCharacterBase.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n\r\n#include \"Character/AuraCharacterBase.h\"\r\n#include \"AbilitySystemComponent.h\"\r\n#include \"Aura/Aura.h\"\r\n#include \"Components/CapsuleComponent.h\"\r\n#include \"UI/Widget/DamageTextComponent.h\"\r\n\r\nAAuraCharacterBase::AAuraCharacterBase()\r\n{\r\n\tPrimaryActorTick.bCanEverTick = false;\r\n\t\r\n\tGetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);\r\n\tGetCapsuleComponent()->SetGenerateOverlapEvents(false);\r\n\tGetMesh()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);\r\n\tGetMesh()->SetCollisionResponseToChannel(ECC_Projectile, ECR_Overlap);\r\n\tGetMesh()->SetGenerateOverlapEvents(true);\r\n\t\r\n\tWeapon = CreateDefaultSubobject<USkeletalMeshComponent>(\"Weapon\");\r\n\tWeapon->SetupAttachment(GetMesh(), \"WeaponHandSocket\");\r\n\tWeapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);\r\n}\r\n\r\nvoid AAuraCharacterBase::BeginPlay()\r\n{\r\n\tSuper::BeginPlay();\r\n}\r\n\r\nvoid AAuraCharacterBase::InitAbilityActorInfo()\r\n{\r\n}\r\n\r\nvoid AAuraCharacterBase::InitializeDefaultAttributes() const\r\n{\r\n\tApplyEffectToSelf(DefaultPrimaryAttributes);\r\n\tApplyEffectToSelf(DefaultSecondaryAttributes);\r\n\r\n\t// Vital Attributes (Health and Mana) are dependent on Secondary Attributes (Max Health and Max Mana)\r\n\tApplyEffectToSelf(DefaultVitalAttributes);\r\n}\r\n\r\nvoid AAuraCharacterBase::ApplyEffectToSelf(const TSubclassOf<UGameplayEffect>& GameplayEffectClass, float Level) const\r\n{\r\n\tcheck(IsValid(AbilitySystemComponent));\r\n\tcheck(GameplayEffectClass);\r\n\t\r\n\tFGameplayEffectContextHandle ContextHandle = AbilitySystemComponent->MakeEffectContext();\r\n\tContextHandle.AddSourceObject(this);\r\n\tconst FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(GameplayEffectClass, Level, ContextHandle);\r\n\t\r\n\tAbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());\r\n}\r\n\r\n\r\nvoid AAuraCharacterBase::Die()\r\n{\r\n\tWeapon->DetachFromComponent(FDetachmentTransformRules(EDetachmentRule::KeepWorld, true));\r\n\tMulticastHandleDeath();\r\n}\r\n\r\nvoid AAuraCharacterBase::MulticastHandleDeath_Implementation()\r\n{\r\n\tWeapon->SetSimulatePhysics(true);\r\n\tWeapon->SetEnableGravity(true);\r\n\tWeapon->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);\r\n\r\n\tGetMesh()->SetSimulatePhysics(true);\r\n\tGetMesh()->SetEnableGravity(true);\r\n\tGetMesh()->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);\r\n\tGetMesh()->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);\r\n\t\r\n\tGetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);\r\n\r\n\tDissolve();\r\n}\r\n\r\nvoid AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount)\r\n{\r\n\tif (DamageTextComponentClass)\r\n\t{\r\n\t\tUDamageTextComponent* DamageText = NewObject<UDamageTextComponent>(this, DamageTextComponentClass, NAME_None, RF_Transient);\r\n\t\tDamageText->RegisterComponent();\r\n\t\tDamageText->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);\r\n\t\tDamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);\r\n\t\tDamageText->SetDamageText(DamageAmount);\r\n\t}\r\n}\r\n\r\nvoid AAuraCharacterBase::Dissolve()\r\n{\r\n\tif (IsValid(DissloveMaterialInstance))\r\n\t{\r\n\t\tUMaterialInstanceDynamic* DynamicMatInst = UMaterialInstanceDynamic::Create(DissloveMaterialInstance, this);\r\n\t\tGetMesh()->SetMaterial(0, DynamicMatInst);\r\n\t\tStartDissolveTimeline(DynamicMatInst);\r\n\t}\r\n\tif (IsValid(WeaponDissloveMaterialInstance))\r\n\t{\r\n\t\tUMaterialInstanceDynamic* DynamicMatInst = UMaterialInstanceDynamic::Create(WeaponDissloveMaterialInstance, this);\r\n\t\tWeapon->SetMaterial(0, DynamicMatInst);\r\n\t\tStartWeaponDissolveTimeline(DynamicMatInst);\r\n\t}\r\n}\r\n\r\nUAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const\r\n{\r\n\treturn AbilitySystemComponent;\r\n}\r\n\r\nFVector AAuraCharacterBase::GetCombatSocketLocation()\r\n{\r\n\tcheck(Weapon);\r\n\treturn Weapon->GetSocketLocation(WeaponTipSocketName);\r\n}\r\n\r\nUAnimMontage* AAuraCharacterBase::GetHitReactMontage_Implementation()\r\n{\r\n\treturn HitReactMontage;\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Private/Character/AuraCharacterBase.cpp b/Source/Aura/Private/Character/AuraCharacterBase.cpp
+--- a/Source/Aura/Private/Character/AuraCharacterBase.cpp	(revision a09e8e29e48143f9a54436e88426261279506770)
++++ b/Source/Aura/Private/Character/AuraCharacterBase.cpp	(date 1749452578817)
+@@ -75,7 +75,7 @@
+ 	Dissolve();
+ }
+ 
+-void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount)
++void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount, bool bBlockedHit, bool bCriticalHit)
+ {
+ 	if (DamageTextComponentClass)
+ 	{
+@@ -83,7 +83,7 @@
+ 		DamageText->RegisterComponent();
+ 		DamageText->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+ 		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+-		DamageText->SetDamageText(DamageAmount);
++		DamageText->SetDamageText(DamageAmount, bBlockedHit, bCriticalHit);
+ 	}
+ }
+ 
+Index: .idea/.idea.Aura.dir/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Aura.dir/.idea/workspace.xml b/.idea/.idea.Aura.dir/.idea/workspace.xml
+--- a/.idea/.idea.Aura.dir/.idea/workspace.xml	(revision a09e8e29e48143f9a54436e88426261279506770)
++++ b/.idea/.idea.Aura.dir/.idea/workspace.xml	(date 1749455497067)
+@@ -135,11 +135,13 @@
+   <component name="ChangeListManager">
+     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/FloatingText/BP_DamageTextComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/FloatingText/BP_DamageTextComponent.uasset" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/FloatingText/WBP_DamageText.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/FloatingText/WBP_DamageText.uasset" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/Character/AuraCharacterBase.cpp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/Character/AuraCharacterBase.h" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/UI/Widget/DamageTextComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/UI/Widget/DamageTextComponent.h" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -176,6 +178,156 @@
+   }
+ }</component>
+   <component name="HighlightingSettingsPerFile">
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt/tchar.h" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/../../../Software/Visual Studio/VC/Tools/MSVC/14.44.35207/include/xatomic.h" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAbilityTypes.generated.h" root0="SKIP_HIGHLIGHTING" />
+@@ -183,11 +335,15 @@
+     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraPlayerController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/DamageTextComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/OverlayWidgetController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Actor/AuraProjectile.cpp" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Private/Character/AuraCharacterBase.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Input/AuraInputConfig.cpp" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Source/Aura/Private/Player/AuraPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/Actor/AuraProjectile.h" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/Character/AuraCharacterBase.h" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Source/Aura/Public/Input/AuraInputConfig.h" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://D:/UE/Projects/GAS_Aura 5.5/Source/Aura/Public/UI/Widget/DamageTextComponent.h" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/UnrealEditor/Inc/GameplayAbilities/UHT/AbilitySystemComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/UnrealEditor/Inc/GameplayAbilities/UHT/AbilityTask_PlayMontageAndWait.gen.cpp" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Plugins/Runtime/GameplayAbilities/Intermediate/Build/Win64/x64/UnrealEditor/Development/GameplayAbilities/Module.GameplayAbilities.3.cpp" root0="FORCE_HIGHLIGHTING" />
+@@ -198,6 +354,7 @@
+     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/Runtime/Slate/Private/Framework/Application/SlateApplication.cpp" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/ThirdParty/NVIDIA/nvapi/nvapi.h" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/include/vorbis/vorbisfile.h" root0="SKIP_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/../../UnrealEngine-release/Engine/Source/ThirdParty/mimalloc/2.0.0/src/alloc.c" root0="SKIP_HIGHLIGHTING" />
+   </component>
+   <component name="ProblemsViewState">
+     <option name="selectedTabId" value="SWEA" />
+@@ -29199,15 +29356,7 @@
+       <workItem from="1748742571795" duration="51157000" />
+       <workItem from="1749220861789" duration="70000" />
+       <workItem from="1749220976323" duration="7867000" />
+-      <workItem from="1749377808053" duration="16463000" />
+-    </task>
+-    <task id="LOCAL-00015" summary="Spawn FireBolt from Event">
+-      <option name="closed" value="true" />
+-      <created>1747966614360</created>
+-      <option name="number" value="00015" />
+-      <option name="presentableId" value="LOCAL-00015" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1747966614360</updated>
++      <workItem from="1749377808053" duration="19936000" />
+     </task>
+     <task id="LOCAL-00016" summary="T">
+       <option name="closed" value="true" />
+@@ -29593,7 +29742,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1749439639479</updated>
+     </task>
+-    <option name="localTasksCounter" value="64" />
++    <task id="LOCAL-00064" summary="Using a Custom Effect Context">
++      <option name="closed" value="true" />
++      <created>1749441275884</created>
++      <option name="number" value="00064" />
++      <option name="presentableId" value="LOCAL-00064" />
++      <option name="project" value="LOCAL" />
++      <updated>1749441275885</updated>
++    </task>
++    <option name="localTasksCounter" value="65" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -29641,7 +29798,6 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+-    <MESSAGE value="Curve Tables - CSV" />
+     <MESSAGE value="Initializing Enemy Attributes" />
+     <MESSAGE value="Damage Meta Attribute" />
+     <MESSAGE value="Ability Damage" />
+@@ -29666,7 +29822,8 @@
+     <MESSAGE value="Implementing Net Serialize" />
+     <MESSAGE value="Struct Ops Type Traits" />
+     <MESSAGE value="Aura Ability System Globals" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Aura Ability System Globals" />
++    <MESSAGE value="Using a Custom Effect Context" />
++    <option name="LAST_COMMIT_MESSAGE" value="Using a Custom Effect Context" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n\r\n#include \"AbilitySystem/Abilities/AuraProjectileSpell.h\"\r\n\r\n#include \"AbilitySystemBlueprintLibrary.h\"\r\n#include \"AbilitySystemComponent.h\"\r\n#include \"AuraGameplayTags.h\"\r\n#include \"Actor/AuraProjectile.h\"\r\n#include \"Interaction/CombatInterface.h\"\r\n\r\n\r\nvoid UAuraProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Handle,\r\n                                           const FGameplayAbilityActorInfo* ActorInfo,\r\n                                           const FGameplayAbilityActivationInfo ActivationInfo,\r\n                                           const FGameplayEventData* TriggerEventData)\r\n{\r\n\tSuper::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);\r\n}\r\n\r\nvoid UAuraProjectileSpell::SpawnProjectile(const FVector& ProjectileTargetLocation)\r\n{\r\n\tconst bool bIsServer = GetAvatarActorFromActorInfo()->HasAuthority();\r\n\tif (!bIsServer) return;\r\n\r\n\tAActor* AvatarActor = GetAvatarActorFromActorInfo();\r\n\tAActor* OwningActor = GetOwningActorFromActorInfo();\r\n\r\n\tif (ICombatInterface* CombatInterface = Cast<ICombatInterface>(AvatarActor))\r\n\t{\r\n\t\tconst FVector SocketLocation = CombatInterface->GetCombatSocketLocation();\r\n\t\tFTransform SpawnTransform = FTransform(FVector3d(SocketLocation.X, SocketLocation.Y, ProjectileHeight));\r\n\t\tFRotator Rotation = (ProjectileTargetLocation - SocketLocation).Rotation();\r\n\t\tRotation.Pitch = 0.f;\r\n\r\n\t\tSpawnTransform.SetRotation(Rotation.Quaternion());\r\n\r\n\t\tAAuraProjectile* Projectile = GetWorld()->SpawnActorDeferred<AAuraProjectile>(\r\n\t\t\tProjectileClass,\r\n\t\t\tSpawnTransform,\r\n\t\t\tOwningActor,\r\n\t\t\tCast<APawn>(AvatarActor),\r\n\t\t\tESpawnActorCollisionHandlingMethod::AlwaysSpawn);\r\n\r\n\t\tconst UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());\r\n\t\tconst FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());\r\n\t\t\r\n\t\tFGameplayEffectContextHandle EffectContextHandle = SourceASC->MakeEffectContext();\r\n\t\tEffectContextHandle.SetAbility(this);\r\n\t\tEffectContextHandle.AddSourceObject(Projectile);\r\n\t\tTArray<TWeakObjectPtr<AActor>> Actors;\r\n\t\tActors.Add(Projectile);\r\n\t\tEffectContextHandle.AddActors(Actors);\r\n\t\tFHitResult HitResult;\r\n\t\tHitResult.Location = ProjectileTargetLocation;\r\n\t\tEffectContextHandle.AddHitResult(HitResult);\r\n\r\n#if WITH_EDITOR\r\n\t\tconst float ScaledDamage = Damage.GetValueAtLevel(10);\r\n#endif\r\n\t\t// const float ScaledDamage = Damage.GetValueAtLevel(GetAbilityLevel());\r\n\t\t\r\n\t\tFAuraGameplayTags GameplayTags = FAuraGameplayTags::Get();\r\n\t\tUAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, ScaledDamage);\r\n\t\t\r\n\t\tProjectile->DamageEffectSpecHandle = SpecHandle;\r\n\r\n\t\tProjectile->FinishSpawning(SpawnTransform);\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp b/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp
+--- a/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp	(revision a09e8e29e48143f9a54436e88426261279506770)
++++ b/Source/Aura/Private/AbilitySystem/Abilities/AuraProjectileSpell.cpp	(date 1749455399196)
+@@ -44,16 +44,6 @@
+ 
+ 		const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
+ 		const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+-		
+-		FGameplayEffectContextHandle EffectContextHandle = SourceASC->MakeEffectContext();
+-		EffectContextHandle.SetAbility(this);
+-		EffectContextHandle.AddSourceObject(Projectile);
+-		TArray<TWeakObjectPtr<AActor>> Actors;
+-		Actors.Add(Projectile);
+-		EffectContextHandle.AddActors(Actors);
+-		FHitResult HitResult;
+-		HitResult.Location = ProjectileTargetLocation;
+-		EffectContextHandle.AddHitResult(HitResult);
+ 
+ #if WITH_EDITOR
+ 		const float ScaledDamage = Damage.GetValueAtLevel(10);
+Index: Source/Aura/Public/Character/AuraCharacterBase.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Copyright Lucas Wang\r\n\r\n#pragma once\r\n\r\n#include \"CoreMinimal.h\"\r\n#include \"AbilitySystemInterface.h\"\r\n#include \"GameFramework/Character.h\"\r\n#include \"Interaction/CombatInterface.h\"\r\n#include \"AuraCharacterBase.generated.h\"\r\n\r\nclass UDamageTextComponent;\r\nstruct FEffectProperties;\r\nclass UGameplayAbility;\r\nclass UGameplayEffect;\r\nclass UAbilitySystemComponent;\r\nclass UAttributeSet;\r\n\r\nUCLASS(Abstract)\r\nclass AURA_API AAuraCharacterBase : public ACharacter, public IAbilitySystemInterface, public ICombatInterface\r\n{\r\n\tGENERATED_BODY()\r\n\r\npublic:\r\n\tAAuraCharacterBase();\r\n\r\n\tvirtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;\r\n\r\n\tUAttributeSet* GetAttributeSet() const { return AttributeSet; }\r\n\r\n\tvirtual UAnimMontage* GetHitReactMontage_Implementation() override;\r\n\r\n\tvirtual void Die() override;\r\n\r\n\tUFUNCTION(NetMulticast, Reliable)\r\n\tvirtual void MulticastHandleDeath();\r\n\r\n\tUFUNCTION(NetMulticast, Reliable)\r\n\tvoid MulticastShowDamageNumber(float DamageAmount);\r\n\r\nprotected:\r\n\tvirtual void BeginPlay() override;\r\n\r\n\tUPROPERTY(EditAnywhere, Category = \"Combat\")\r\n\tTObjectPtr<USkeletalMeshComponent> Weapon;\r\n\r\n\tUPROPERTY(EditAnywhere, Category = \"Combat\")\r\n\tFName WeaponTipSocketName;\r\n\r\n\tvirtual FVector GetCombatSocketLocation() override;\r\n\r\n\tUPROPERTY()\r\n\tTObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;\r\n\r\n\tUPROPERTY()\r\n\tTObjectPtr<UAttributeSet> AttributeSet;\r\n\r\n\tvirtual void InitAbilityActorInfo();\r\n\r\n\tUPROPERTY(BlueprintReadOnly, EditAnywhere, Category = \"Attributes\")\r\n\tTSubclassOf<UGameplayEffect> DefaultPrimaryAttributes;\r\n\r\n\tUPROPERTY(BlueprintReadOnly, EditAnywhere, Category = \"Attributes\")\r\n\tTSubclassOf<UGameplayEffect> DefaultSecondaryAttributes;\r\n\r\n\tUPROPERTY(BlueprintReadOnly, EditAnywhere, Category = \"Attributes\")\r\n\tTSubclassOf<UGameplayEffect> DefaultVitalAttributes;\r\n\r\n\tvirtual void InitializeDefaultAttributes() const;\r\n\r\n\tvoid ApplyEffectToSelf(const TSubclassOf<UGameplayEffect>& GameplayEffectClass, float Level = 1.f) const;\r\n\r\n\tvoid Dissolve();\r\n\r\n\tUFUNCTION(BlueprintImplementableEvent)\r\n\tvoid StartDissolveTimeline(UMaterialInstanceDynamic* DynamicMaterialInstance);\r\n\t\r\n\tUFUNCTION(BlueprintImplementableEvent)\r\n\tvoid StartWeaponDissolveTimeline(UMaterialInstanceDynamic* DynamicMaterialInstance);\r\n\t\r\n\t/* Disslove Effects */\r\n\tUPROPERTY(EditAnywhere, BlueprintReadOnly)\r\n\tTObjectPtr<UMaterialInstance> DissloveMaterialInstance;\r\n\t\r\n\tUPROPERTY(EditAnywhere, BlueprintReadOnly)\r\n\tTObjectPtr<UMaterialInstance> WeaponDissloveMaterialInstance;\r\n\r\n\tUPROPERTY(EditDefaultsOnly)\r\n\tTSubclassOf<UDamageTextComponent> DamageTextComponentClass;\r\n\r\nprivate:\r\n\tUPROPERTY(EditAnywhere, Category = \"Combat\")\r\n\tTObjectPtr<UAnimMontage> HitReactMontage;\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Source/Aura/Public/Character/AuraCharacterBase.h b/Source/Aura/Public/Character/AuraCharacterBase.h
+--- a/Source/Aura/Public/Character/AuraCharacterBase.h	(revision a09e8e29e48143f9a54436e88426261279506770)
++++ b/Source/Aura/Public/Character/AuraCharacterBase.h	(date 1749452578830)
+@@ -35,7 +35,7 @@
+ 	virtual void MulticastHandleDeath();
+ 
+ 	UFUNCTION(NetMulticast, Reliable)
+-	void MulticastShowDamageNumber(float DamageAmount);
++	void MulticastShowDamageNumber(float DamageAmount, bool bBlockedHit, bool bCriticalHit);
+ 
+ protected:
+ 	virtual void BeginPlay() override;

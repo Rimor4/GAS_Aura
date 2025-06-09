@@ -105,8 +105,7 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 
 			if (const bool bFatal = NewHealth <= 0.f)
 			{
-				ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
-				if (CombatInterface)
+				if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor))
 				{
 					CombatInterface->Die();
 				}
@@ -129,7 +128,7 @@ void UAuraAttributeSet::ShowFloatingText(const FEffectProperties& Props, const f
 {
 	if (Props.SourceCharacter != Props.TargetCharacter)
 	{
-		Cast<AAuraCharacterBase>(Props.TargetCharacter)->MulticastShowDamageNumber(Damage);
+		Cast<AAuraCharacterBase>(Props.TargetCharacter)->MulticastShowDamageNumber(Damage, bBlockedHit, bCriticalHit);
 	}
 }
 

@@ -75,7 +75,7 @@ void AAuraCharacterBase::MulticastHandleDeath_Implementation()
 	Dissolve();
 }
 
-void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount)
+void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount, bool bBlockedHit, bool bCriticalHit)
 {
 	if (DamageTextComponentClass)
 	{
@@ -83,7 +83,7 @@ void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float Da
 		DamageText->RegisterComponent();
 		DamageText->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
-		DamageText->SetDamageText(DamageAmount);
+		DamageText->SetDamageText(DamageAmount, bBlockedHit, bCriticalHit);
 	}
 }
 
