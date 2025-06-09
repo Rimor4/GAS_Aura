@@ -134,7 +134,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AuraAbilityTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AuraAbilityTypes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AuraAbilityTypes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AuraAbilityTypes.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +156,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../UnrealEngine-release" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -173,6 +174,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt/tchar.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Software/Visual Studio/VC/Tools/MSVC/14.44.35207/include/xatomic.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAbilityTypes.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraAttributeSet.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/AuraPlayerController.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/Aura/UHT/DamageTextComponent.gen.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -216,8 +218,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "Uproject.Aura.executor": "Debug",
     "ezargs.lastUsed": "",
-    "git-widget-placeholder": "start",
-    "settings.editor.selected.configurable": "settings.sync"
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="Push.Settings">
@@ -29193,15 +29195,7 @@
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
       <workItem from="1749220976323" duration="7867000" />
-      <workItem from="1749377808053" duration="8915000" />
-    </task>
-    <task id="LOCAL-00011" summary="Spawning Projectiles">
-      <option name="closed" value="true" />
-      <created>1747757828658</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1747757828658</updated>
+      <workItem from="1749377808053" duration="13504000" />
     </task>
     <task id="LOCAL-00012" summary="Ability Tasks">
       <option name="closed" value="true" />
@@ -29587,7 +29581,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749396370100</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Custom Gameplay Effect Context">
+      <option name="closed" value="true" />
+      <created>1749396814920</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1749396814920</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29635,7 +29637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Enemy Health Bar" />
     <MESSAGE value="Ghost Bar" />
     <MESSAGE value="Character Class Info" />
     <MESSAGE value="Default Attribute Effects" />
@@ -29659,6 +29660,7 @@
     <MESSAGE value="Implementing Critical Hits" />
     <MESSAGE value="Implementing Critical Hits&#10;Damage Calculation Coefficients" />
     <MESSAGE value="The Gameplay Effect Context" />
+    <MESSAGE value="Net Serialize" />
     <MESSAGE value="Custom Gameplay Effect Context" />
     <option name="LAST_COMMIT_MESSAGE" value="Custom Gameplay Effect Context" />
   </component>
