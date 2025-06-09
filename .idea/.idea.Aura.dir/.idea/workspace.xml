@@ -135,6 +135,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAbilitySystemLibrary.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/AuraAttributeSet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AbilitySystem/ExecCalc/ExecCalc_Damage.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAbilitySystemLibrary.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Public/AbilitySystem/AuraAttributeSet.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +160,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../UnrealEngine-release" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -217,7 +222,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "Uproject.Aura.executor": "Debug",
     "ezargs.lastUsed": "",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "start",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
@@ -29194,15 +29199,7 @@
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
       <workItem from="1749220976323" duration="7867000" />
-      <workItem from="1749377808053" duration="14599000" />
-    </task>
-    <task id="LOCAL-00014" summary="Sending Gameplay Events">
-      <option name="closed" value="true" />
-      <created>1747965219163</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1747965219163</updated>
+      <workItem from="1749377808053" duration="16463000" />
     </task>
     <task id="LOCAL-00015" summary="Spawn FireBolt from Event">
       <option name="closed" value="true" />
@@ -29588,7 +29585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749438882353</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Aura Ability System Globals">
+      <option name="closed" value="true" />
+      <created>1749439639479</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1749439639479</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29636,7 +29641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Default Attribute Effects" />
     <MESSAGE value="Curve Tables - CSV" />
     <MESSAGE value="Initializing Enemy Attributes" />
     <MESSAGE value="Damage Meta Attribute" />
@@ -29661,7 +29665,8 @@
     <MESSAGE value="Custom Gameplay Effect Context" />
     <MESSAGE value="Implementing Net Serialize" />
     <MESSAGE value="Struct Ops Type Traits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Struct Ops Type Traits" />
+    <MESSAGE value="Aura Ability System Globals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aura Ability System Globals" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
