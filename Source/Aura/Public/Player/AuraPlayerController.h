@@ -45,10 +45,6 @@ protected:
 
 private:
 #pragma region Input
-	bool bIsTopDown = true;
-
-	UFUNCTION()
-	void IsTopDownChanged(const bool bNewIsTopDown);
 	
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputMappingContext> AuraContext;

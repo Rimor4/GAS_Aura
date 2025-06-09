@@ -16,15 +16,9 @@ class AURA_API AAuraGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Game, meta = (DisplayName = "Top Down"))
-	bool bIsTopDown = true;
-
 	UPROPERTY(EditDefaultsOnly, Category="Character Class Defaults")
 	TObjectPtr<UCharacterClassInfo> CharacterClassInfo;
 
 protected:
 	virtual void StartPlay() override;
-
-	UFUNCTION(BlueprintCallable, Category=Game)
-	void ChangeIsTopDown(const bool bNewIsTopDown);
 };
