@@ -64,7 +64,12 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	EvaluationParams.TargetTags = TargetTags;
 
 	// Get Damage Set by Caller Magnitude
-	float Damage = Spec.GetSetByCallerMagnitude(FAuraGameplayTags::Get().Damage);
+	float Damage = 0;
+	for (FGameplayTag DamageTypeTag : FAuraGameplayTags::Get().DamageTypes)
+	{
+		const float DamageTypeValue = Spec.GetSetByCallerMagnitude(DamageTypeTag);
+		Damage += DamageTypeValue;
+	}
 
 	// Capture BlockChance on Target, and determine if there was a successful Block
 	float TargetBlockChance = 0.f;
@@ -107,13 +112,16 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	const bool bCriticalHit = FMath::RandRange(1, 100) < SourceCritChance;
 	
 	UAuraAbilitySystemLibrary::SetIsCriticalHit(EffectContextHandle, bCriticalHit);
-	
+
 	float SourceCritDamageMultiplier = 0.f;
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().CritDamageMultiplierDef, EvaluationParams, SourceCritDamageMultiplier);
 	SourceCritDamageMultiplier = FMath::Max<float>(SourceCritDamageMultiplier, 0.f);
+	
+	const FRealCurve* CritMultiplierCurve = CharacterClassInfo->DamageCalculationCoefficients->FindCurve(FName("CritDamageMultiplier"), FString());
+	const float CritMultiplierCoefficient = CritMultiplierCurve->Eval(SourceCombatInterface->GetPlayerLevel());
 
 	Damage = bCriticalHit
-		? Damage * (1 + SourceCritDamageMultiplier / 100.f)
+		? Damage * (1 + SourceCritDamageMultiplier / 100.f) * CritMultiplierCoefficient
 		: Damage;
 	
 	const FGameplayModifierEvaluatedData EvaluatedData(UAuraAttributeSet::GetIncomingDamageAttribute(), EGameplayModOp::Additive, Damage);

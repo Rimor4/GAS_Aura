@@ -59,7 +59,12 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 #pragma endregion
 
 	GameplayTags.Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(
-		FName("Damage"), FString("Damage Tag"));
+		FName("Damage"), FString("Damage"));
+	
+	GameplayTags.Damage_Fire = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Damage.Fire"), FString("Fire Damage Type"));
+
+	GameplayTags.DamageTypes.Add(GameplayTags.Damage_Fire);
 
 	GameplayTags.Effects_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Effects.HitReact"), FString("Hit React Effect"));

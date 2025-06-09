@@ -42,6 +42,9 @@ public:
 	FGameplayTag InputTag_SHIFT;
 
 	FGameplayTag Damage;
+	FGameplayTag Damage_Fire;
+
+	TArray<FGameplayTag> DamageTypes;
 	
 	FGameplayTag Effects_HitReact;
 	
