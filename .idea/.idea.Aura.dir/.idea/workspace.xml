@@ -133,7 +133,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="" />
+    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29192,15 +29194,7 @@
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
       <workItem from="1749220976323" duration="7867000" />
-      <workItem from="1749377808053" duration="13815000" />
-    </task>
-    <task id="LOCAL-00013" summary="Ability Tasks">
-      <option name="closed" value="true" />
-      <created>1747964072193</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1747964072193</updated>
+      <workItem from="1749377808053" duration="14599000" />
     </task>
     <task id="LOCAL-00014" summary="Sending Gameplay Events">
       <option name="closed" value="true" />
@@ -29586,7 +29580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749438404805</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Struct Ops Type Traits">
+      <option name="closed" value="true" />
+      <created>1749438882353</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1749438882353</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29634,7 +29636,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Character Class Info" />
     <MESSAGE value="Default Attribute Effects" />
     <MESSAGE value="Curve Tables - CSV" />
     <MESSAGE value="Initializing Enemy Attributes" />
@@ -29659,7 +29660,8 @@
     <MESSAGE value="Net Serialize" />
     <MESSAGE value="Custom Gameplay Effect Context" />
     <MESSAGE value="Implementing Net Serialize" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Net Serialize" />
+    <MESSAGE value="Struct Ops Type Traits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Struct Ops Type Traits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
