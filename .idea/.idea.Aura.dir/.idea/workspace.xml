@@ -133,10 +133,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Aura/Private/AuraAbilityTypes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Aura/Private/AuraAbilityTypes.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="d0c2842f-a0f4-4dba-945e-1c5b24d5b3d6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29195,15 +29192,7 @@
       <workItem from="1748742571795" duration="51157000" />
       <workItem from="1749220861789" duration="70000" />
       <workItem from="1749220976323" duration="7867000" />
-      <workItem from="1749377808053" duration="13504000" />
-    </task>
-    <task id="LOCAL-00012" summary="Ability Tasks">
-      <option name="closed" value="true" />
-      <created>1747963983616</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1747963983616</updated>
+      <workItem from="1749377808053" duration="13815000" />
     </task>
     <task id="LOCAL-00013" summary="Ability Tasks">
       <option name="closed" value="true" />
@@ -29589,7 +29578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749396814920</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Implementing Net Serialize">
+      <option name="closed" value="true" />
+      <created>1749438404805</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1749438404805</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -29637,7 +29634,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Ghost Bar" />
     <MESSAGE value="Character Class Info" />
     <MESSAGE value="Default Attribute Effects" />
     <MESSAGE value="Curve Tables - CSV" />
@@ -29662,7 +29658,8 @@
     <MESSAGE value="The Gameplay Effect Context" />
     <MESSAGE value="Net Serialize" />
     <MESSAGE value="Custom Gameplay Effect Context" />
-    <option name="LAST_COMMIT_MESSAGE" value="Custom Gameplay Effect Context" />
+    <MESSAGE value="Implementing Net Serialize" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Net Serialize" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
