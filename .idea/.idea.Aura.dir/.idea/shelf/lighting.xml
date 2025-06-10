@@ -1,0 +1,14 @@
+<changelist name="lighting" date="1749517240111" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/shelf/lighting/shelved.patch" />
+  <option name="DESCRIPTION" value="lighting" />
+  <binary>
+    <option name="BEFORE_PATH" value="Content/Blueprints/AbilitySystem/Data/DA_AttributeInfo.uasset" />
+    <option name="AFTER_PATH" value="Content/Blueprints/AbilitySystem/Data/DA_AttributeInfo.uasset" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/shelf/lighting/DA_AttributeInfo.uasset" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Content/Blueprints/AbilitySystem/GameplayEffect/DefaultAttributes/Aura/GE_SecondaryAttributes.uasset" />
+    <option name="AFTER_PATH" value="Content/Blueprints/AbilitySystem/GameplayEffect/DefaultAttributes/Aura/GE_SecondaryAttributes.uasset" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/shelf/lighting/GE_SecondaryAttributes.uasset" />
+  </binary>
+</changelist>
