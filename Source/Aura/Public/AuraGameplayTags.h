@@ -58,5 +58,6 @@ public:
 	
 private:
 	static FAuraGameplayTags GameplayTags;
-	
+
+	static bool bInitialized;
 };

@@ -6,9 +6,12 @@
 #include "GameplayTagsManager.h"
 
 FAuraGameplayTags FAuraGameplayTags::GameplayTags;
+bool FAuraGameplayTags::bInitialized = false;   
 
 void FAuraGameplayTags::InitializeNativeGameplayTags()
 {
+	if (bInitialized) return;
+	
 #pragma region Primary Attributes
 	GameplayTags.Attributes_Primary_Strength = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Primary.Strength"), FString("Strength"));
@@ -92,4 +95,6 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 
 	GameplayTags.Effects_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Effects.HitReact"), FString("Hit React Effect"));
+
+	bInitialized = true;
 }
