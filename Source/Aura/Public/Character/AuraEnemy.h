@@ -42,6 +42,9 @@ public:
 
 	virtual void Die() override;
 
+	virtual void SetCombatTarget_Implementation(AActor* InCombatTarget) override;
+	virtual AActor* GetCombatTarget_Implementation() const override;
+
 #pragma endregion
 
 	UPROPERTY(BlueprintAssignable)
@@ -60,6 +63,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Combat")
 	float LifeSpanOnDeath = 5.f;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Combat")
+	TObjectPtr<AActor> CombatTarget;
 	
 protected:
 	virtual void BeginPlay() override;
