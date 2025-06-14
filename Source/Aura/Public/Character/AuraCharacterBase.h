@@ -35,6 +35,11 @@ public:
 	virtual FVector GetCombatSocketLocation_Implementation() override;
 	
 	virtual bool IsDead_Implementation() const override;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TArray<FTaggedMontage> AttackMontages;
+
+	virtual TArray<FTaggedMontage> GetAttackMontages_Implementation() override { return AttackMontages; }
 #pragma endregion 
 
 	UFUNCTION(NetMulticast, Reliable)
