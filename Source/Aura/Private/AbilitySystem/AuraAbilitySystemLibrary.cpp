@@ -152,3 +152,26 @@ bool UAuraAbilitySystemLibrary::SetIsCriticalHit(FGameplayEffectContextHandle& E
 	}
 	return false;
 }
+
+void UAuraAbilitySystemLibrary::GetLivePlayersWithinRadius(const UObject* WorldContextObject, TArray<AActor*>& OutActors, const TArray<AActor*>& ActorsToIgnore, const FVector& SphereOrigin, float Radius)
+{
+	FCollisionQueryParams SphereParams;
+	SphereParams.AddIgnoredActors(ActorsToIgnore);
+
+	if (const UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull))
+	{
+		TArray<FOverlapResult> Overlaps;
+		const FCollisionObjectQueryParams ObjectQueryParams(FCollisionObjectQueryParams::InitType::AllDynamicObjects);
+		const FCollisionShape SphereShape = FCollisionShape::MakeSphere(Radius);
+
+		World->OverlapMultiByObjectType(Overlaps, SphereOrigin, FQuat::Identity, ObjectQueryParams, SphereShape, SphereParams);
+		for (FOverlapResult& Overlap : Overlaps)
+		{
+			AActor* OverlappedActor = Overlap.GetActor();
+			if (OverlappedActor->Implements<UCombatInterface>() && !ICombatInterface::Execute_IsDead(OverlappedActor))
+			{
+				OutActors.AddUnique(OverlappedActor);
+			}
+		}
+	}
+}

@@ -69,10 +69,11 @@ void AAuraCharacterBase::MulticastHandleDeath_Implementation()
 	GetMesh()->SetEnableGravity(true);
 	GetMesh()->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
 	GetMesh()->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);
-	
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	Dissolve();
+
+	bDead = true;
 }
 
 void AAuraCharacterBase::MulticastShowDamageNumber_Implementation(const float DamageAmount, bool bBlockedHit, bool bCriticalHit)
@@ -112,6 +113,11 @@ FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation()
 {
 	check(Weapon);
 	return Weapon->GetSocketLocation(WeaponTipSocketName);
+}
+
+bool AAuraCharacterBase::IsDead_Implementation() const
+{
+	return bDead;
 }
 
 UAnimMontage* AAuraCharacterBase::GetHitReactMontage_Implementation()
