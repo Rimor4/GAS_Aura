@@ -236,7 +236,7 @@ void AAuraPlayerController::BuildAutoRunPathToTarget()
 		{
 			Spline->AddSplinePoint(PointLoc, ESplineCoordinateSpace::World);
 #if WITH_EDITOR
-			DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
+			// DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
 #endif
 		}
 		bAutoRunning = true;

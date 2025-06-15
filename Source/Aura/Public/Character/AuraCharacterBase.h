@@ -96,10 +96,10 @@ protected:
 	
 	/* Disslove Effects */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TObjectPtr<UMaterialInstance> DissloveMaterialInstance;
+	TObjectPtr<UMaterialInstance> DissolveMaterialInstance;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TObjectPtr<UMaterialInstance> WeaponDissloveMaterialInstance;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Instanced)
+	TObjectPtr<UMaterialInstance> WeaponDissolveMaterialInstance;
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
