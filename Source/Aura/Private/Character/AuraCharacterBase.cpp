@@ -4,7 +4,6 @@
 #include "Character/AuraCharacterBase.h"
 #include "AbilitySystemComponent.h"
 #include "AuraConstants.h"
-#include "AuraGameplayTags.h"
 #include "Aura/Aura.h"
 #include "Components/CapsuleComponent.h"
 #include "DataTable/Combat/MontageWeaponRow.h"

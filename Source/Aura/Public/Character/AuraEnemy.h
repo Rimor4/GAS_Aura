@@ -66,6 +66,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
 	TObjectPtr<AActor> CombatTarget;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
+	float PhysicalAttackRadius = 45.f;
 	
 protected:
 	virtual void BeginPlay() override;
