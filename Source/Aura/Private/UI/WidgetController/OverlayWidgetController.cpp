@@ -3,10 +3,12 @@
 
 #include "UI/WidgetController/OverlayWidgetController.h"
 
+#include "AuraConstants.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "AbilitySystem/AuraAttributeSet.h"
 #include "Blueprint/UserWidget.h"
 #include "Engine/AssetManager.h"
+#include "Game/AuraGameInstanceBase.h"
 #include "UI/Widget/AuraUserWidget.h"
 #include "Util/AuraUtils.h"
 
@@ -93,8 +95,11 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 				if (Tag.MatchesTag(MessageTag))
 				{
-					const FUIWidgetRow* Row = FAuraUtils::GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
-					MessageWidgetRowDelegate.Broadcast(*Row);
+					if (const FUIWidgetRow* Row = FAuraUtils::GetDataTableRow<FUIWidgetRow>(this,
+						FName(DataTableName::MessageWidget), Tag.GetTagName()))
+					{
+						MessageWidgetRowDelegate.Broadcast(*Row);
+					}
 				}
 			}
 		});

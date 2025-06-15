@@ -3,9 +3,13 @@
 
 #include "Character/AuraCharacterBase.h"
 #include "AbilitySystemComponent.h"
+#include "AuraConstants.h"
+#include "AuraGameplayTags.h"
 #include "Aura/Aura.h"
 #include "Components/CapsuleComponent.h"
+#include "DataTable/Combat/MontageWeaponRow.h"
 #include "UI/Widget/DamageTextComponent.h"
+#include "Util/AuraUtils.h"
 
 AAuraCharacterBase::AAuraCharacterBase()
 {
@@ -109,11 +113,31 @@ UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent;
 }
 
-FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation()
+FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation(const FGameplayTag& MontageTag)
 {
-	check(Weapon);
-	return Weapon->GetSocketLocation(WeaponTipSocketName);
+	if (const FMontageWeaponRow* Row = FAuraUtils::GetDataTableRow<FMontageWeaponRow>(this,
+		FName(DataTableName::MontageWeapon), MontageTag.GetTagName()))
+	{
+		const FName SocketName = FAuraUtils::GetFNamePropertyValue(this, Row->WeaponSocketProperty);
+		if (SocketName == NAME_None)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Property %s not found in class %s: 在 %s 表中配置错误"), *Row->WeaponSocketProperty.ToString(),
+			       *GetClass()->GetName(), *DataTableName::MontageWeapon.ToString());
+		}
+
+		// 位置要么在 Mesh 上，要么在 Weapon 上
+		if (GetMesh()->DoesSocketExist(SocketName))
+		{
+			return GetMesh()->GetSocketLocation(SocketName);
+		}
+		if (Weapon && Weapon->DoesSocketExist(SocketName))
+		{
+			return Weapon->GetSocketLocation(SocketName);
+		}
+	}
+	return FVector();
 }
+	
 
 bool AAuraCharacterBase::IsDead_Implementation() const
 {
