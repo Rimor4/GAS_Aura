@@ -42,6 +42,7 @@ void AAuraEnemy::PossessedBy(AController* NewController)
 	AuraAIController->RunBehaviorTree(BehaviorTree);
 	AuraAIController->GetBlackboardComponent()->SetValueAsBool(FName("HitReacting"), false);
 	AuraAIController->GetBlackboardComponent()->SetValueAsBool(FName("RangedAttacker"), CharacterClass != ECharacterClass::Warrior);
+	// TODO: 敌人攻击后固定移动到玩家在自己攻击前的位置，而不是当前位置
 }
 
 void AAuraEnemy::BeginPlay()
