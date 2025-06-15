@@ -6,6 +6,7 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "AbilitySystem/AuraAbilitySystemLibrary.h"
 #include "Aura/Aura.h"
 #include "Components/AudioComponent.h"
 #include "Components/SphereComponent.h"
@@ -70,6 +71,9 @@ void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, 
 {
 	AActor* EffectCauser = DamageEffectSpecHandle.Data.IsValid() ? DamageEffectSpecHandle.Data.Get()->GetContext().GetEffectCauser() : nullptr;
 	if (!EffectCauser || EffectCauser == OtherActor)
+		return;
+
+	if (UAuraAbilitySystemLibrary::IsSameTeam(OtherActor, EffectCauser))
 		return;
 
 	if (!bHit)

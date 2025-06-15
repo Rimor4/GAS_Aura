@@ -39,7 +39,7 @@ private:
 	bool bHit = false;
 
 	UPROPERTY(EditDefaultsOnly)
-	float LifeSpan = 15.f;
+	float LifeSpan = 10.f;
 	
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USphereComponent> Sphere;
