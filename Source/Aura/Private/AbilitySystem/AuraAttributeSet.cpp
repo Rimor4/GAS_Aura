@@ -92,15 +92,22 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
+		if (GetHealth() <= 0.f)
+		{
+			if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor))
+			{
+				CombatInterface->Die();
+			}
+		}
+		
 		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
-#if WITH_EDITOR
-		// UE_LOG(LogTemp, Warning, TEXT("Change Health on %s, Health %f"), *Props.TargetAvatarActor->GetName(), GetHealth());
-#endif
 	}
+	
 	if (Data.EvaluatedData.Attribute == GetManaAttribute())
 	{
 		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
 	}
+	
 	if (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())
 	{
 		const float LocalIncomingDamage = GetIncomingDamage();
