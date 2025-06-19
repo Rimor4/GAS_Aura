@@ -98,7 +98,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UMaterialInstance> DissolveMaterialInstance;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Instanced)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UMaterialInstance> WeaponDissolveMaterialInstance;
 
 	UPROPERTY(EditDefaultsOnly)
