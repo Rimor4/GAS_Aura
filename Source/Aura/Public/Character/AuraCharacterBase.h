@@ -8,6 +8,7 @@
 #include "Interaction/CombatInterface.h"
 #include "AuraCharacterBase.generated.h"
 
+class UNiagaraSystem;
 class UDamageTextComponent;
 struct FEffectProperties;
 class UGameplayAbility;
@@ -35,6 +36,8 @@ public:
 	virtual FVector GetCombatSocketLocation_Implementation(const FGameplayTag& MontageTag) override;
 	
 	virtual bool IsDead_Implementation() const override;
+
+	virtual UNiagaraSystem* GetBloodEffect_Implementation() override { return BloodEffect; }
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TArray<FTaggedMontage> AttackMontages;
@@ -103,6 +106,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UNiagaraSystem* BloodEffect;
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
