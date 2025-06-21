@@ -33,7 +33,7 @@ public:
 	
 	virtual UAnimMontage* GetHitReactMontage_Implementation() override;
 	
-	virtual FVector GetCombatSocketLocation_Implementation(const FGameplayTag& MontageTag) override;
+	virtual FVector GetCombatSocketLocation_Implementation(const FGameplayTag& CombatSocketTag) override;
 	
 	virtual bool IsDead_Implementation() const override;
 
@@ -43,6 +43,8 @@ public:
 	TArray<FTaggedMontage> AttackMontages;
 
 	virtual TArray<FTaggedMontage> GetAttackMontages_Implementation() override { return AttackMontages; }
+
+	virtual FTaggedMontage GetTaggedMontageByTag_Implementation(const FGameplayTag& MontageTag) override;
 #pragma endregion 
 
 	UFUNCTION(NetMulticast, Reliable)

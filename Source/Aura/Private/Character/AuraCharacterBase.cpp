@@ -112,10 +112,10 @@ UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent;
 }
 
-FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation(const FGameplayTag& MontageTag)
+FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation(const FGameplayTag& CombatSocketTag)
 {
 	if (const FMontageWeaponRow* Row = FAuraUtils::GetDataTableRow<FMontageWeaponRow>(this,
-		FName(DataTableName::MontageWeapon), MontageTag.GetTagName()))
+		FName(DataTableName::MontageWeapon), CombatSocketTag.GetTagName()))
 	{
 		const FName SocketName = FAuraUtils::GetFNamePropertyValue(this, Row->WeaponSocketProperty);
 		if (SocketName == NAME_None)
@@ -137,6 +137,17 @@ FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation(const FGamepl
 	return FVector();
 }
 	
+FTaggedMontage AAuraCharacterBase::GetTaggedMontageByTag_Implementation(const FGameplayTag& MontageTag)
+{
+	for (FTaggedMontage TaggedMontage : AttackMontages)
+	{
+		if (TaggedMontage.MontageTag == MontageTag)
+		{
+			return TaggedMontage;
+		}
+	}
+	return FTaggedMontage();
+}
 
 bool AAuraCharacterBase::IsDead_Implementation() const
 {
